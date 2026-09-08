@@ -1,9 +1,35 @@
 /* PHASE 16 - DOCTOR SOCIAL ICON RESTORE + FOOTER REFINEMENT */
 
 (() => {
-  const style = document.createElement("style");
-  style.dataset.phase = "doctor-social-and-footer-refinement";
-  style.textContent = `
+  const addStyle = (css) => {
+    const style = document.createElement("style");
+    style.dataset.phase = "doctor-social-and-footer-refinement";
+    style.textContent = css;
+    document.head.appendChild(style);
+  };
+
+  const replaceDoctorImages = () => {
+    const section = document.querySelector("#doctors");
+    if (!section) return;
+
+    const cards = section.querySelectorAll(".doctor-card");
+    const imageSources = [
+      "https://images.pexels.com/photos/15752232/pexels-photo-15752232.jpeg?auto=compress&cs=tinysrgb&w=2400",
+      "https://images.pexels.com/photos/37272297/pexels-photo-37272297.jpeg?auto=compress&cs=tinysrgb&w=2400"
+    ];
+
+    // Elena is card 2, Adrian is card 3 in the six-card team grid.
+    [1, 2].forEach((cardIndex, sourceIndex) => {
+      const image = cards[cardIndex]?.querySelector(".doctor-image img");
+      if (!image) return;
+
+      image.src = imageSources[sourceIndex];
+      image.removeAttribute("srcset");
+      image.sizes = "100vw";
+    });
+  };
+
+  addStyle(`
     /* Restore the compact doctor social buttons. */
     .doctors-repaired .doctor-socials {
       display: flex;
@@ -104,24 +130,12 @@
       display: none !important;
     }
 
-    /* Use higher-resolution portraits for the two softer team images. */
-    @media (min-resolution: 1dppx) {
-      .doctors-repaired .doctor-card:nth-child(2) .doctor-image img {
-        content: url("https://images.pexels.com/photos/32254667/pexels-photo-32254667.jpeg?auto=compress&cs=tinysrgb&w=1800");
-      }
-
-      .doctors-repaired .doctor-card:nth-child(3) .doctor-image img {
-        content: url("https://images.pexels.com/photos/37407191/pexels-photo-37407191.jpeg?auto=compress&cs=tinysrgb&w=1800");
-      }
-    }
-
     @media (max-width: 650px) {
       footer .footer-col {
         width: 100%;
       }
     }
-  `;
-  document.head.appendChild(style);
+  `);
 
   // Remove the Instagram placeholder from the Contact column immediately.
   const removeInstagram = () => {
@@ -142,6 +156,7 @@
   };
 
   removeInstagram();
+  replaceDoctorImages();
 
   // Protect the final footer state if another refinement inserts the placeholder later.
   const footer = document.querySelector("footer");
