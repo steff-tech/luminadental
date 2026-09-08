@@ -36,6 +36,7 @@ const normalizeEmDashes = () => {
   try {
     await loadScript("script-base.js");
     await loadScript("phase2.js");
+    await loadScript("phase3.js");
     normalizeEmDashes();
   } catch (error) {
     console.error("Lumina scripts failed to load:", error);
