@@ -104,17 +104,15 @@
       display: none !important;
     }
 
-    /* Doctor portraits: use native browser rendering without the earlier
-       saturation filter, which can soften fine facial and hair detail. */
-    .doctors-repaired .doctor-image-refined img {
-      filter: none;
-      image-rendering: auto;
-      transform: none;
-    }
+    /* Use higher-resolution portraits for the two softer team images. */
+    @media (min-resolution: 1dppx) {
+      .doctors-repaired .doctor-card:nth-child(2) .doctor-image img {
+        content: url("https://images.pexels.com/photos/32254667/pexels-photo-32254667.jpeg?auto=compress&cs=tinysrgb&w=1800");
+      }
 
-    .doctors-repaired .doctor-card-refined:hover .doctor-image-refined img {
-      filter: none;
-      transform: scale(1.01);
+      .doctors-repaired .doctor-card:nth-child(3) .doctor-image img {
+        content: url("https://images.pexels.com/photos/37407191/pexels-photo-37407191.jpeg?auto=compress&cs=tinysrgb&w=1800");
+      }
     }
 
     @media (max-width: 650px) {
