@@ -113,13 +113,16 @@
     }
 
     .services-refined .services-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 430px);
+      column-gap: clamp(40px, 8vw, 120px);
       align-items: end;
       margin-bottom: 52px;
     }
 
     .services-refined .services-head .lead {
       max-width: 430px;
-      margin-bottom: 2px;
+      margin: 0 0 4px auto;
       font-size: 15px;
       line-height: 1.75;
     }
@@ -370,6 +373,15 @@
 
     /* TABLET */
     @media (max-width: 900px) {
+      .services-refined .services-head {
+        grid-template-columns: 1fr;
+        row-gap: 24px;
+      }
+
+      .services-refined .services-head .lead {
+        margin: 0;
+      }
+
       .services-refined .service-grid,
       .doctors-refined .doctor-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
