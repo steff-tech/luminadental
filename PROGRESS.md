@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Phase:** Responsive + Accessibility QA  
+**Phase:** Final Semantic + Content Cleanup  
 **Working Branch:** `refinement`  
 **Main Branch:** `main` remains unchanged by the refinement work.
 
@@ -27,7 +27,7 @@
 - [x] Added a portfolio-safe disclaimer inside the booking flow so it does not imply a live appointment backend.
 - [x] Added a separate Phase 2 visual refinement layer so the tested booking implementation remains isolated.
 - [x] Simplified desktop and mobile navigation labels to Services / Our Doctors / About / FAQs.
-- [x] Reframed the desktop phone action as the primary Book an Appointment action.
+- [x] Reframed the desktop header action as the primary Book an Appointment action.
 - [x] Removed the promotional scrolling announcement from the visual flow.
 - [x] Refined hero spacing, typography scale, overlay treatment, and supporting trust-note hierarchy.
 - [x] Added active navigation state based on the visible section.
@@ -42,23 +42,35 @@
 - [x] Strengthened keyboard focus, mobile menu focus trapping, testimonial keyboard interaction, and touch target sizing.
 - [x] Added reduced-motion overrides across the refined interaction layer.
 - [x] Added a final image-alt fallback for images without an `alt` attribute.
+- [x] Added final semantic cleanup for navigation labels and control relationships.
+- [x] Improved FAQ `aria-hidden` state synchronization.
+- [x] Replaced remaining placeholder social/footer links with intentional internal destinations.
+- [x] Added fictional/concept-project framing to third-party provider references.
+- [x] Added explicit carousel role and slide semantics.
 
 ## Next
 
 - [ ] Review final layout locally at 375px, 768px, 1024px, and 1440px.
-- [ ] Perform final content / placeholder-link cleanup.
-- [ ] Review third-party brand references for appropriate fictional/concept-project framing.
+- [ ] Review third-party image/source usage and add attribution documentation where appropriate.
 - [ ] Update README for portfolio presentation.
 - [ ] Decide whether to merge `refinement` into `main` after final local review.
 
 ## Known Issues / Opportunities
 
-- The current HTML still contains the original navigation markup; refinement layers normalize labels and behavior at runtime. A later semantic cleanup can move the final navigation directly into the HTML.
-- Several placeholder links use `#` and should be handled intentionally in the final experience.
+- The final navigation labels are normalized at runtime because the original HTML remains intentionally preserved as the base implementation.
 - The booking prototype is intentionally front-end-only and does not submit, store, or check real appointment availability.
-- Existing third-party brand references should be reviewed for appropriate fictional/concept-project framing.
+- The current visual review still benefits from an actual browser pass at the target viewport sizes.
+- Third-party provider names and image assets remain fictional/concept presentation material and should not imply live partnerships.
 
 ## Change Log
+
+### Final Semantic + Content Cleanup
+- Added `phase6.js` for final runtime semantic normalization.
+- Normalized navigation labels to Services / Our Doctors / About / FAQs.
+- Strengthened FAQ answer visibility semantics.
+- Removed inert placeholder link behavior from remaining social/footer links.
+- Added explicit concept-project framing around third-party provider references.
+- Added carousel and slide semantics for testimonial accessibility.
 
 ### Responsive + Accessibility QA
 - Added responsive spacing and layout overrides for tablet and mobile.
