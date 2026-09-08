@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Phase:** Foundation / Documentation  
+**Phase:** Navigation + Booking UX  
 **Working Branch:** `refinement`  
 **Main Branch:** `main` remains unchanged by the refinement work.
 
@@ -19,12 +19,16 @@
 - [x] Created `DESIGN.md`.
 - [x] Created this `PROGRESS.md`.
 - [x] Created isolated `refinement` branch from `main`.
+- [x] Added a multi-step appointment booking prototype.
+- [x] Added service, date/time, contact, review, and demo-confirmation steps.
+- [x] Added modal focus management, Escape-to-close, backdrop close, validation, and focus return.
+- [x] Added a responsive persistent booking CTA that appears after scrolling.
+- [x] Connected the existing hero and mobile booking CTAs to the booking flow.
+- [x] Added a portfolio-safe disclaimer inside the booking flow so it does not imply a live appointment backend.
 
 ## Next
 
-- [ ] Refine navigation and conversion architecture.
-- [ ] Implement persistent appointment CTA.
-- [ ] Build accessible front-end booking modal / sheet.
+- [ ] Refine desktop/mobile navigation labels and hierarchy.
 - [ ] Refine hero composition and first-viewport hierarchy.
 - [ ] Refine service, experience, doctor, HMO, testimonial, FAQ, and footer presentation.
 - [ ] Replace or reduce unnecessary continuous motion.
@@ -34,14 +38,19 @@
 
 ## Known Issues / Opportunities
 
-- Current booking CTAs primarily point toward the contact/footer area instead of a dedicated booking experience.
-- Current navigation terminology does not exactly match the project brief.
-- Promotional announcement and continuous testimonial movement may conflict with the calm premium positioning.
+- The current HTML navigation still contains the older Home / About Us / Our Team / Contact terminology and should be normalized in the next navigation pass.
+- The promotional announcement and continuous testimonial movement may conflict with the calm premium positioning.
 - Several placeholder links use `#` and should be handled intentionally in the final experience.
+- The booking prototype is intentionally front-end-only and does not submit, store, or check real appointment availability.
 - Existing motion is useful but should be audited for restraint and purpose.
-- Repository README is currently minimal and should be upgraded after the implementation is stabilized.
 
 ## Change Log
+
+### Navigation + Booking UX
+- Added an accessible multi-step booking experience to `script.js`.
+- Added responsive modal/sheet styling and a persistent scroll-triggered appointment CTA.
+- Connected hero and mobile appointment actions to the booking flow.
+- Kept the work isolated on `refinement`; `main` was not changed.
 
 ### Foundation
 - Created isolated `refinement` branch from `main`.
