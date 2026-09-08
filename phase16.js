@@ -10,6 +10,11 @@
       padding:0; display:grid; place-items:center; border-radius:50%;
     }
     .doctors-repaired .doctor-socials svg { width:14px; height:14px; }
+
+    /* Footer Contact keeps phone + email only. */
+    footer .footer-col a[href="#"] {
+      display: none !important;
+    }
   `;
   document.head.appendChild(style);
 
