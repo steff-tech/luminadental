@@ -53,7 +53,6 @@
     cards.forEach((card, index) => {
       card.classList.add("quote-card-refined");
       card.dataset.index = String(index);
-      card.setAttribute("aria-label", `Patient testimonial ${index + 1}`);
     });
 
     if (carousel.querySelector(".testimonial-controls")) return;
@@ -164,7 +163,7 @@
         </div>
       </div>
     `;
-    main.insertBefore(section, footer);
+    footer.parentNode.insertBefore(section, footer);
     const button = section.querySelector(".final-booking-button");
     const heroButton = document.querySelector(".hero .btn-primary");
     button?.addEventListener("click", () => heroButton?.click());
@@ -227,33 +226,33 @@
     .final-booking-copy { max-width: 640px; }
     .final-booking-copy .eyebrow { color: rgba(255,255,255,.64); }
     .final-booking-copy h2 { margin-bottom: 18px; color: var(--white); font-size: clamp(32px,5vw,56px); line-height: 1.06; }
-    .final-booking-copy p { max-width: 500px; color: rgba(255,255,255,.72); font-size: 14px; line-height: 1.75; }
-    .final-booking-button { flex: 0 0 auto; min-width: 190px; min-height: 54px; white-space: nowrap; }
-    @media (max-width: 1000px) {
-      .trust-refined .trust-grid { grid-template-columns: repeat(2,minmax(0,1fr)); padding: 28px 0; }
-      .trust-refined .trust-label { grid-column: 1 / -1; }
-      .trust-logo-refined { border-left: 0; border-top: 1px solid var(--border); }
-      .testimonial-track-refined { grid-auto-columns: calc((100vw - 70px)/2); }
-    }
-    @media (max-width: 800px) {
-      .insurance-banner-refined { display: block; }
-      .insurance-wordmarks { margin-top: 28px; }
+    .final-booking-copy p { max-width: 500px; color: rgba(255,255,255,.72); font-size: 15px; line-height: 1.75; }
+
+    @media (max-width: 1100px) {
+      .trust-refined .trust-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .insurance-banner-refined { grid-template-columns: 1fr; }
+      .insurance-refined .insurance-wordmarks { grid-template-columns: repeat(3, minmax(0,1fr)); }
+      .testimonial-track-refined { grid-auto-columns: calc((100% - 18px)/2); }
       .faq-refined .faq-grid { grid-template-columns: 1fr; gap: 42px; }
       .faq-refined .faq-intro { position: static; }
-      .final-booking-panel { align-items: flex-start; flex-direction: column; gap: 28px; }
+      .final-booking-panel { align-items: flex-start; }
     }
+
     @media (max-width: 700px) {
-      .trust-refined .trust-grid { grid-template-columns: 1fr 1fr; }
-      .testimonial-track-refined { grid-auto-columns: calc(100vw - 48px); }
-      .quote-card-refined { min-height: 0; }
-      .testimonial-controls { margin-top: 18px; }
-      .final-booking-cta { padding-bottom: 82px; }
-      .final-booking-panel { border-radius: 22px; }
+      .trust-refined .trust-grid { grid-template-columns: 1fr; }
+      .trust-logo-refined { border-left: 0; border-top: 1px solid var(--border); }
+      .insurance-refined .insurance-wordmarks { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .testimonial-track-refined { grid-auto-columns: 100%; }
+      .quote-card-refined { min-height: 300px; padding: 24px; }
+      .final-booking-cta { padding: 20px 0 76px; }
+      .final-booking-panel { flex-direction: column; gap: 30px; padding: 30px 24px; border-radius: 22px; }
       .final-booking-button { width: 100%; }
     }
+
     @media (prefers-reduced-motion: reduce) {
-      .testimonial-control,.testimonial-dot { transition: none; }
-      .testimonial-carousel-refined { scroll-behavior: auto; }
+      .testimonial-control,
+      .testimonial-dot { transition: none; }
+      .testimonial-control:hover { transform: none; }
     }
   `);
 
@@ -265,6 +264,9 @@
     createFinalCta();
   };
 
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init, { once: true });
-  else init();
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init, { once: true });
+  } else {
+    init();
+  }
 })();
