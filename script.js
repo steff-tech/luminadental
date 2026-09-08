@@ -138,28 +138,11 @@ const runPhase5Qa = () => {
     carousel.setAttribute("aria-label", "Patient testimonials");
   }
 
-  document.querySelectorAll(".testimonial-control").forEach((button) => {
-    button.addEventListener("click", () => {
-      const controls = button.closest(".testimonial-controls");
-      const dots = controls?.querySelectorAll(".testimonial-dot") || [];
-      if (!dots.length) return;
-      const activeIndex = Array.from(dots).findIndex((dot) => dot.classList.contains("is-active"));
-      const isNext = button.dataset.direction === "next";
-      const lastIndex = dots.length - 1;
-      if ((!isNext && activeIndex <= 0) || (isNext && activeIndex >= lastIndex)) {
-        button.setAttribute("aria-disabled", "true");
-      } else {
-        button.removeAttribute("aria-disabled");
-      }
-    });
-  });
-
   const menu = document.querySelector("#mobileMenu");
   const toggle = document.querySelector("#menuToggle");
   const updateMenuFocus = () => {
     if (!menu || !toggle) return;
-    const isOpen = menu.classList.contains("active");
-    if (!isOpen) return;
+    if (!menu.classList.contains("active")) return;
     const focusable = menu.querySelectorAll("a, button, input, select, textarea, [tabindex]:not([tabindex=\"-1\"])");
     if (focusable.length) focusable[0].focus({ preventScroll: true });
   };
@@ -193,6 +176,7 @@ const runPhase5Qa = () => {
     await loadScript("phase4.js");
     normalizeEmDashes();
     runPhase5Qa();
+    await loadScript("phase6.js");
     normalizeEmDashes();
   } catch (error) {
     console.error("Lumina scripts failed to load:", error);
