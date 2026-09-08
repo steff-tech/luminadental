@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Phase:** Navigation + Hero Refinement  
+**Phase:** Responsive + Accessibility QA  
 **Working Branch:** `refinement`  
 **Main Branch:** `main` remains unchanged by the refinement work.
 
@@ -32,24 +32,53 @@
 - [x] Refined hero spacing, typography scale, overlay treatment, and supporting trust-note hierarchy.
 - [x] Added active navigation state based on the visible section.
 - [x] Added responsive hero adjustments for tablet and mobile.
+- [x] Refined Services, About / Experience, and Doctors presentation.
+- [x] Refined trust / technology and HMO presentation.
+- [x] Reworked testimonials into a calmer user-controlled carousel.
+- [x] Refined FAQ layout and ARIA relationships.
+- [x] Added the final booking conversion panel.
+- [x] Removed remaining visible em-dash characters from rendered content.
+- [x] Added responsive QA overrides for mobile, tablet, and desktop behavior.
+- [x] Strengthened keyboard focus, mobile menu focus trapping, testimonial keyboard interaction, and touch target sizing.
+- [x] Added reduced-motion overrides across the refined interaction layer.
+- [x] Added a final image-alt fallback for images without an `alt` attribute.
 
 ## Next
 
-- [ ] Refine service, experience, doctor, HMO, testimonial, FAQ, and footer presentation.
-- [ ] Replace or reduce unnecessary continuous motion.
-- [ ] Perform responsive QA at mobile, tablet, and desktop widths.
-- [ ] Perform accessibility and technical QA.
+- [ ] Review final layout locally at 375px, 768px, 1024px, and 1440px.
+- [ ] Perform final content / placeholder-link cleanup.
+- [ ] Review third-party brand references for appropriate fictional/concept-project framing.
 - [ ] Update README for portfolio presentation.
+- [ ] Decide whether to merge `refinement` into `main` after final local review.
 
 ## Known Issues / Opportunities
 
-- The current HTML still contains the original navigation markup; the Phase 2 layer normalizes labels and behavior at runtime. A later semantic cleanup can move the final navigation directly into the HTML.
+- The current HTML still contains the original navigation markup; refinement layers normalize labels and behavior at runtime. A later semantic cleanup can move the final navigation directly into the HTML.
 - Several placeholder links use `#` and should be handled intentionally in the final experience.
 - The booking prototype is intentionally front-end-only and does not submit, store, or check real appointment availability.
-- The testimonial carousel still uses continuous movement and is scheduled for the later motion refinement phase.
 - Existing third-party brand references should be reviewed for appropriate fictional/concept-project framing.
 
 ## Change Log
+
+### Responsive + Accessibility QA
+- Added responsive spacing and layout overrides for tablet and mobile.
+- Added consistent 44px interaction targets for navigation and utility links.
+- Added testimonial carousel keyboard/focus treatment.
+- Added mobile-menu focus handling and Tab-loop containment.
+- Added reduced-motion fallbacks for scroll, transforms, transitions, and animations.
+- Added image-alt fallback handling.
+
+### Trust + Conversion Refinement
+- Refined trust / technology hierarchy.
+- Refined HMO / insurance presentation.
+- Replaced continuous testimonial movement with user-controlled navigation.
+- Refined FAQ layout and ARIA relationships.
+- Added a final booking CTA before the footer.
+
+### Core Content Refinement
+- Refined service cards and content hierarchy.
+- Reframed the About / Experience section as an editorial split layout.
+- Refined doctor presentation with a lead-doctor treatment.
 
 ### Navigation + Hero Refinement
 - Added `phase2.js` as an isolated visual/interaction refinement layer.
