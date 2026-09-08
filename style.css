@@ -650,14 +650,6 @@ h3 {
     center / cover;
 }
 
-
-/*
-  Softer overlay:
-  The previous version pushed a lot of white
-  into the left side. This keeps the text readable
-  while allowing more of the actual hero image through.
-*/
-
 .hero::before {
   content: "";
 
@@ -701,147 +693,77 @@ h3 {
 
   display: grid;
 
-  grid-template-columns:
-    minmax(0, 720px) 1fr;
+  grid-template-columns: 1fr;
 
   align-items: center;
 }
 
 .hero-copy {
-  padding:
-    110px 0;
+  max-width: 650px;
 }
-
-.hero-copy .lead {
-  margin-bottom: 32px;
-}
-
-.hero-note {
-  display: flex;
-
-  align-items: center;
-
-  gap: 12px;
-
-  margin-top: 28px;
-
-  color: var(--body-gray);
-
-  font-size: 13px;
-}
-
-
-/* HERO AVATARS */
-
-.mini-avatars {
-  display: flex;
-
-  flex-shrink: 0;
-}
-
-.mini-avatars img {
-  width: 34px;
-  height: 34px;
-
-  margin-left: -8px;
-
-  border:
-    2px solid var(--white);
-
-  border-radius: 50%;
-
-  object-fit: cover;
-}
-
-.mini-avatars img:first-child {
-  margin-left: 0;
-}
-
-
-/* HERO TEXT ANIMATION */
 
 .hero-animate {
-  opacity: 0;
-
-  filter:
-    blur(10px);
-
-  transform:
-    translateY(24px);
-
-  animation:
-    heroReveal 0.9s ease forwards;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.hero-animate-delay-1 {
-  animation-delay: 0.15s;
-}
-
-.hero-animate-delay-2 {
-  animation-delay: 0.3s;
-}
-
-.hero-animate-delay-3 {
-  animation-delay: 0.45s;
-}
-
+.hero-animate-delay-1,
+.hero-animate-delay-2,
+.hero-animate-delay-3,
 .hero-animate-delay-4 {
-  animation-delay: 0.6s;
-}
-
-@keyframes heroReveal {
-
-  to {
-    opacity: 1;
-
-    filter:
-      blur(0);
-
-    transform:
-      translateY(0);
-  }
-
+  transition-delay: 0s;
 }
 
 
 /* =====================================================
-   TRUST MARKERS
+   TRUST STRIP
 ===================================================== */
 
 .trust-strip {
-  border-top:
-    1px solid var(--border);
+  padding: 0;
+
+  background: var(--white);
+}
+
+.trust-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.2fr repeat(4, 1fr);
 
   border-bottom:
     1px solid var(--border);
 }
 
-.trust-grid {
-  min-height: 112px;
-
-  display: grid;
-
-  grid-template-columns:
-    1.2fr
-    repeat(4, 1fr);
+.trust-label {
+  display: flex;
 
   align-items: center;
 
-  gap: 28px;
-}
+  padding: 24px 0;
 
-.trust-label {
   color: var(--body-gray);
 
   font-size: 12px;
+  font-weight: 600;
 
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
 .badge-logo {
-  color: #7f8790;
+  min-height: 92px;
 
-  text-align: center;
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  border-left:
+    1px solid var(--border);
+
+  color: #59606f;
 
   font-family:
     "Plus Jakarta Sans",
@@ -849,20 +771,23 @@ h3 {
 
   font-size: 15px;
   font-weight: 700;
+
+  letter-spacing: 0.01em;
 }
 
 .badge-logo small {
-  display: block;
-
   margin-top: 4px;
+
+  color: #9aa1ac;
 
   font-family:
     "Inter",
     sans-serif;
 
-  font-size: 9px;
+  font-size: 8px;
+  font-weight: 600;
 
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
 }
 
 
@@ -871,18 +796,19 @@ h3 {
 ===================================================== */
 
 .services-head {
-  display: flex;
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
 
   align-items: end;
-  justify-content: space-between;
 
-  gap: 30px;
+  gap: 70px;
 
-  margin-bottom: 48px;
+  margin-bottom: 54px;
 }
 
 .services-head .lead {
-  max-width: 430px;
+  justify-self: end;
 }
 
 .service-grid {
@@ -891,12 +817,10 @@ h3 {
   grid-template-columns:
     repeat(3, 1fr);
 
-  gap: 22px;
+  gap: 24px;
 }
 
 .service-card {
-  min-height: 430px;
-
   display: flex;
 
   flex-direction: column;
@@ -1115,11 +1039,6 @@ h3 {
   margin: 0 auto;
 }
 
-
-/*
-  Six team members = balanced 3 x 2 desktop layout.
-*/
-
 .doctor-grid {
   display: grid;
 
@@ -1151,7 +1070,7 @@ h3 {
 
   box-shadow:
     0 16px 40px
-    rgba(43, 45, 66, 0.08);
+    rgba(43, 45, 66, 0.09);
 }
 
 .doctor-image {
@@ -1176,7 +1095,7 @@ h3 {
 
 .doctor-card:hover .doctor-image img {
   transform:
-    scale(1.025);
+    scale(1.02);
 }
 
 .doctor-info {
@@ -1192,34 +1111,31 @@ h3 {
   background: var(--white);
 }
 
-.doctor-info h3 {
-  margin-bottom: 6px;
+.doctor-info span {
+  color: var(--mint-dark);
 
-  font-size: 19px;
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.12em;
 }
 
-.doctor-specialty {
+.doctor-info h3 {
+  margin-top: 7px;
+}
+
+.doctor-info p {
   color: var(--body-gray);
 
   font-size: 13px;
 
-  line-height: 1.55;
-}
-
-.doctor-description {
-  margin-top: 12px;
-
-  color: #7b818b;
-
-  font-size: 12px;
-
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
 .doctor-socials {
   display: flex;
-
-  align-items: center;
 
   gap: 8px;
 
@@ -1241,44 +1157,23 @@ h3 {
 
   border-radius: 50%;
 
-  color: #68717b;
+  color: var(--mint-dark);
 
-  background: var(--white);
+  font-size: 12px;
 
   transition:
-    color 0.25s ease,
     background-color 0.25s ease,
-    border-color 0.25s ease,
+    color 0.25s ease,
     transform 0.25s ease;
 }
 
 .doctor-socials a:hover {
-  color: var(--white);
+  background: var(--mint-light);
 
-  background: var(--mint);
-
-  border-color: var(--mint);
+  color: var(--mint-dark);
 
   transform:
     translateY(-2px);
-}
-
-.doctor-socials svg {
-  width: 14px;
-  height: 14px;
-
-  fill: currentColor;
-
-  stroke: currentColor;
-
-  stroke-width: 1.5;
-
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.doctor-socials a:nth-child(2) svg {
-  fill: none;
 }
 
 
@@ -1287,41 +1182,41 @@ h3 {
 ===================================================== */
 
 .payment-wrap {
-  padding:
-    0 0 110px;
+  padding: 76px 0;
+
+  background: var(--light-gray);
 }
 
 .insurance-banner {
   display: grid;
 
-  grid-template-columns:
-    0.9fr 1.6fr;
+  grid-template-columns: 1.1fr 0.9fr;
 
   align-items: center;
 
-  gap: 60px;
+  gap: 50px;
 
   padding:
-    42px 46px;
-
-  border:
-    1px solid var(--border);
+    38px 44px;
 
   border-radius:
-    var(--radius-lg);
+    var(--radius-xl);
 
-  background: var(--light-gray);
+  background: var(--mint-light);
 }
 
-.insurance-copy h3 {
-  margin:
-    14px 0 10px;
+.insurance-copy h2 {
+  margin-top: 10px;
+
+  font-size: 34px;
 }
 
 .insurance-copy p {
+  max-width: 520px;
+
   color: var(--body-gray);
 
-  font-size: 13px;
+  font-size: 14px;
 
   line-height: 1.7;
 }
@@ -1330,58 +1225,34 @@ h3 {
   display: grid;
 
   grid-template-columns:
-    repeat(5, 1fr);
+    repeat(4, 1fr);
 
-  align-items: center;
-
-  gap: 22px;
+  gap: 12px;
 }
 
-.insurance-wordmark {
-  color: #68717b;
+.insurance-logo {
+  min-height: 66px;
 
-  text-align: center;
+  display: grid;
 
-  font-weight: 800;
+  place-items: center;
 
-  letter-spacing: -0.04em;
+  border:
+    1px solid rgba(76, 167, 148, 0.18);
 
-  opacity: 0.8;
+  border-radius: 14px;
 
-  transition:
-    color 0.25s ease,
-    transform 0.25s ease;
-}
+  background: var(--white);
 
-.insurance-wordmark:hover {
-  color: var(--mint-dark);
+  color: #68706d;
 
-  transform:
-    translateY(-2px);
-}
+  font-family:
+    "Plus Jakarta Sans",
+    sans-serif;
 
-.maxicare {
-  font-size: 20px;
-}
+  font-size: 12px;
 
-.intellicare {
-  font-size: 16px;
-
-  letter-spacing: -0.05em;
-}
-
-.medicard {
-  font-size: 18px;
-}
-
-.philcare {
-  font-size: 18px;
-}
-
-.etiqa {
-  font-size: 22px;
-
-  letter-spacing: -0.08em;
+  font-weight: 700;
 }
 
 
@@ -1389,70 +1260,34 @@ h3 {
    TESTIMONIALS
 ===================================================== */
 
-.testimonials {
-  background: var(--light-gray);
-}
-
-/* =====================================================
-   TESTIMONIAL CAROUSEL
-===================================================== */
-
 .testimonial-carousel {
-  position: relative;
-
-  width: 100%;
-
-  margin-top: 48px;
-
   overflow: hidden;
 
-  /* Soft fade at both edges */
-  mask-image:
-    linear-gradient(90deg,
-      transparent 0%,
-      #000 5%,
-      #000 95%,
-      transparent 100%);
-
-  -webkit-mask-image:
-    linear-gradient(90deg,
-      transparent 0%,
-      #000 5%,
-      #000 95%,
-      transparent 100%);
+  position: relative;
 }
 
 .testimonial-track {
   display: flex;
 
-  width: max-content;
+  gap: 24px;
 
-  gap: 22px;
+  width: max-content;
 
   animation:
     testimonialScroll 55s linear infinite;
 }
 
-
-/* =====================================================
-   TESTIMONIAL CARD
-===================================================== */
-
-.testimonial-track .quote-card {
-  flex: 0 0 360px;
-
-  width: 360px;
-
-  min-height: 310px;
+.testimonial-track:hover {
+  animation-play-state: paused;
 }
 
+.testimonial-loop {
+  display: flex;
 
-/* =====================================================
-   CAROUSEL ANIMATION
-===================================================== */
+  gap: 24px;
+}
 
 @keyframes testimonialScroll {
-
   from {
     transform:
       translateX(0);
@@ -1460,39 +1295,23 @@ h3 {
 
   to {
     transform:
-      translateX(calc(-50% - 11px));
+      translateX(-50%);
   }
-
-}
-
-
-/* =====================================================
-   PAUSE ON HOVER
-===================================================== */
-
-.testimonial-carousel:hover .testimonial-track {
-  animation-play-state: paused;
-}
-
-
-/* =====================================================
-   KEYBOARD / FOCUS ACCESSIBILITY
-===================================================== */
-
-.testimonial-carousel:focus-within .testimonial-track {
-  animation-play-state: paused;
 }
 
 .quote-card {
   position: relative;
 
-  min-height: 310px;
+  width: 360px;
+
+  min-height: 315px;
+
+  padding:
+    30px;
 
   display: flex;
 
   flex-direction: column;
-
-  padding: 34px 28px 28px;
 
   overflow: hidden;
 
@@ -1710,14 +1529,19 @@ h3 {
    SCROLL REVEAL ANIMATION
 ===================================================== */
 
+/*
+  Fail-safe visibility: sections remain visible even when
+  the IntersectionObserver/reveal script is unavailable.
+  The visible state is preserved for progressive enhancement.
+*/
 .reveal {
-  opacity: 0;
+  opacity: 1;
 
   transform:
-    translateY(40px);
+    translateY(0);
 
   filter:
-    blur(6px);
+    blur(0);
 
   transition:
     opacity 0.8s ease,
@@ -1745,430 +1569,4 @@ h3 {
 
 .reveal-delay-3 {
   transition-delay: 0.3s;
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer {
-  padding:
-    72px 0 30px;
-
-  background: var(--white);
-}
-
-.footer-grid {
-  display: grid;
-
-  grid-template-columns:
-    1.4fr
-    1fr
-    1fr
-    1.2fr;
-
-  gap: 50px;
-
-  padding-bottom: 54px;
-
-  border-bottom:
-    1px solid var(--border);
-}
-
-.footer-brand p {
-  max-width: 280px;
-
-  margin-top: 16px;
-
-  color: var(--body-gray);
-
-  font-size: 13px;
-
-  line-height: 1.7;
-}
-
-.footer-col h4 {
-  margin-bottom: 18px;
-
-  font-size: 13px;
-}
-
-.footer-col a,
-.footer-col p {
-  display: block;
-
-  margin-bottom: 11px;
-
-  color: var(--body-gray);
-
-  font-size: 13px;
-
-  line-height: 1.55;
-}
-
-.footer-col a:hover {
-  color: var(--mint-dark);
-}
-
-.footer-bottom {
-  display: flex;
-
-  justify-content: space-between;
-
-  gap: 20px;
-
-  padding-top: 25px;
-
-  color: #9096a0;
-
-  font-size: 11px;
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 1100px) {
-
-  .container {
-    width:
-      min(100% - 48px, 1240px);
-  }
-
-  .nav-wrap nav {
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 20px;
-  }
-
-  .nav-links,
-  .nav-phone {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-copy {
-    max-width: 720px;
-  }
-
-  .doctor-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
-  }
-
-  .insurance-banner {
-    grid-template-columns: 1fr;
-  }
-
-  .faq-grid {
-    grid-template-columns: 1fr;
-
-    gap: 50px;
-  }
-
-  .footer-grid {
-    grid-template-columns:
-      1fr 1fr;
-  }
-
-}
-
-
-/* =====================================================
-   TABLET / SMALL DESKTOP
-===================================================== */
-
-@media (max-width: 900px) {
-
-  .service-grid,
-  .testimonial-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .experience-grid {
-    grid-template-columns: 1fr;
-
-    gap: 50px;
-  }
-
-  .experience-copy {
-    max-width: 700px;
-  }
-
-  .insurance-wordmarks {
-    grid-template-columns:
-      repeat(3, 1fr);
-  }
-
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 650px) {
-
-  :root {
-    --header-height: 72px;
-  }
-
-  .container {
-    width:
-      min(100% - 32px, 1240px);
-  }
-
-  .section {
-    padding: 75px 0;
-  }
-
-  h1 {
-    font-size:
-      clamp(42px, 12vw, 52px);
-  }
-
-  h2 {
-    font-size: 38px;
-  }
-
-  .nav-wrap nav {
-    height: 72px;
-  }
-
-  .logo {
-    font-size: 19px;
-  }
-
-
-  /* ANNOUNCEMENT */
-
-  .announcement-bar {
-    padding: 11px 0;
-  }
-
-  .announcement-content {
-    font-size: 11px;
-  }
-
-
-  /* MOBILE MENU */
-
-  .mobile-menu {
-    top: var(--header-height);
-  }
-
-  .mobile-menu-inner {
-    width: 100%;
-
-    padding:
-      24px 24px
-      calc(28px + env(safe-area-inset-bottom));
-  }
-
-  .mobile-nav-links a {
-    padding: 15px 0;
-
-    font-size: 25px;
-  }
-
-
-  /* HERO */
-
-  .hero {
-    min-height: 680px;
-
-    background-position:
-      62% center;
-  }
-
-  .hero::before {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.88) 0%,
-        rgba(255, 255, 255, 0.76) 45%,
-        rgba(255, 255, 255, 0.52) 100%
-      );
-  }
-
-  .hero-grid {
-    min-height: auto;
-  }
-
-  .hero-copy {
-    padding:
-      90px 0;
-  }
-
-  .hero-note {
-    align-items: flex-start;
-  }
-
-
-  /* TRUST */
-
-  .trust-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
-
-    padding: 28px 0;
-  }
-
-  .trust-label {
-    grid-column: 1 / -1;
-
-    text-align: center;
-  }
-
-
-  /* SERVICES */
-
-  .services-head {
-    display: block;
-
-    text-align: left;
-  }
-
-  .services-head .eyebrow {
-    justify-content: flex-start;
-  }
-
-  .services-head .lead {
-    margin-top: 25px;
-  }
-
-
-  /* TEAM */
-
-  #doctors .center-head {
-    margin-left: 0;
-    margin-right: 0;
-
-    text-align: left;
-  }
-
-  #doctors .center-head .eyebrow {
-    justify-content: flex-start;
-  }
-
-  #doctors .center-head .lead {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .doctor-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .doctor-image {
-    height: 360px;
-  }
-
-  .doctor-info {
-    min-height: 0;
-  }
-
-
-  /* INSURANCE */
-
-  .payment-wrap {
-    padding-bottom: 75px;
-  }
-
-  .insurance-banner {
-    padding: 30px 26px;
-  }
-
-  .insurance-wordmarks {
-    grid-template-columns:
-      repeat(2, 1fr);
-
-    gap: 24px 16px;
-  }
-
-
-  /* TESTIMONIALS */
-
-  .testimonials .center-head {
-    margin-left: 0;
-    margin-right: 0;
-
-    text-align: left;
-  }
-
-  .testimonials .center-head .eyebrow {
-    justify-content: flex-start;
-  }
-
-  .testimonials .center-head .lead {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-
-  /* FAQ */
-
-  .faq-question {
-    font-size: 16px;
-  }
-
-
-  /* FOOTER */
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-  }
-
-}
-
-
-/* =====================================================
-   REDUCED MOTION
-===================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration:
-      0.01ms !important;
-
-    animation-iteration-count:
-      1 !important;
-
-    transition-duration:
-      0.01ms !important;
-
-    scroll-behavior:
-      auto !important;
-  }
-
-  .reveal {
-    opacity: 1;
-
-    transform: none;
-
-    filter: none;
-  }
-
 }
