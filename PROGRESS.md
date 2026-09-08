@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Phase:** Navigation + Booking UX  
+**Phase:** Navigation + Hero Refinement  
 **Working Branch:** `refinement`  
 **Main Branch:** `main` remains unchanged by the refinement work.
 
@@ -25,11 +25,16 @@
 - [x] Added a responsive persistent booking CTA that appears after scrolling.
 - [x] Connected the existing hero and mobile booking CTAs to the booking flow.
 - [x] Added a portfolio-safe disclaimer inside the booking flow so it does not imply a live appointment backend.
+- [x] Added a separate Phase 2 visual refinement layer so the tested booking implementation remains isolated.
+- [x] Simplified desktop and mobile navigation labels to Services / Our Doctors / About / FAQs.
+- [x] Reframed the desktop phone action as the primary Book an Appointment action.
+- [x] Removed the promotional scrolling announcement from the visual flow.
+- [x] Refined hero spacing, typography scale, overlay treatment, and supporting trust-note hierarchy.
+- [x] Added active navigation state based on the visible section.
+- [x] Added responsive hero adjustments for tablet and mobile.
 
 ## Next
 
-- [ ] Refine desktop/mobile navigation labels and hierarchy.
-- [ ] Refine hero composition and first-viewport hierarchy.
 - [ ] Refine service, experience, doctor, HMO, testimonial, FAQ, and footer presentation.
 - [ ] Replace or reduce unnecessary continuous motion.
 - [ ] Perform responsive QA at mobile, tablet, and desktop widths.
@@ -38,19 +43,27 @@
 
 ## Known Issues / Opportunities
 
-- The current HTML navigation still contains the older Home / About Us / Our Team / Contact terminology and should be normalized in the next navigation pass.
-- The promotional announcement and continuous testimonial movement may conflict with the calm premium positioning.
+- The current HTML still contains the original navigation markup; the Phase 2 layer normalizes labels and behavior at runtime. A later semantic cleanup can move the final navigation directly into the HTML.
 - Several placeholder links use `#` and should be handled intentionally in the final experience.
 - The booking prototype is intentionally front-end-only and does not submit, store, or check real appointment availability.
-- Existing motion is useful but should be audited for restraint and purpose.
+- The testimonial carousel still uses continuous movement and is scheduled for the later motion refinement phase.
+- Existing third-party brand references should be reviewed for appropriate fictional/concept-project framing.
 
 ## Change Log
 
+### Navigation + Hero Refinement
+- Added `phase2.js` as an isolated visual/interaction refinement layer.
+- Added simplified navigation labels and active section state.
+- Converted the desktop header action from a phone CTA to appointment booking.
+- Removed the promotional announcement bar from the visual flow.
+- Refined hero composition, spacing, typography, image positioning, and overlay treatment.
+- Preserved the existing booking implementation in `script-base.js`.
+- Kept all changes isolated on `refinement`; `main` was not changed.
+
 ### Navigation + Booking UX
-- Added an accessible multi-step booking experience to `script.js`.
+- Added an accessible multi-step booking experience.
 - Added responsive modal/sheet styling and a persistent scroll-triggered appointment CTA.
 - Connected hero and mobile appointment actions to the booking flow.
-- Kept the work isolated on `refinement`; `main` was not changed.
 
 ### Foundation
 - Created isolated `refinement` branch from `main`.
