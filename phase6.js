@@ -76,14 +76,20 @@
     });
   };
 
-  const normalizeTrustCopy = () => {
-    const trust = document.querySelector(".trust-strip");
-    if (!trust) return;
+  const normalizePortfolioDisclaimer = () => {
+    const footer = document.querySelector("footer#contact");
+    if (!footer || footer.querySelector(".portfolio-disclaimer")) return;
 
     const note = document.createElement("p");
-    note.className = "trust-disclaimer";
+    note.className = "portfolio-disclaimer";
     note.textContent = "Concept presentation for portfolio purposes. Provider references are shown as illustrative examples.";
-    trust.querySelector(".container")?.appendChild(note);
+
+    const footerBottom = footer.querySelector(".footer-bottom");
+    if (footerBottom) {
+      footerBottom.prepend(note);
+    } else {
+      footer.querySelector(".container")?.appendChild(note);
+    }
   };
 
   const normalizeTestimonialAccessibility = () => {
@@ -106,9 +112,9 @@
     const style = document.createElement("style");
     style.dataset.phase = "semantic-content-cleanup";
     style.textContent = `
-      .trust-disclaimer {
+      .portfolio-disclaimer {
         margin: 0;
-        padding: 10px 0 14px;
+        padding: 12px 0 0;
         color: var(--body-gray);
         font-size: 10px;
         line-height: 1.55;
@@ -120,14 +126,14 @@
       }
 
       @media (max-width: 700px) {
-        .trust-disclaimer {
-          padding-top: 4px;
+        .portfolio-disclaimer {
+          padding-top: 8px;
           text-align: left;
         }
       }
 
       @media (prefers-reduced-motion: reduce) {
-        .trust-disclaimer {
+        .portfolio-disclaimer {
           transition: none;
         }
       }
@@ -139,7 +145,7 @@
     normalizeNavigation();
     normalizeFaqSemantics();
     normalizePlaceholderLinks();
-    normalizeTrustCopy();
+    normalizePortfolioDisclaimer();
     normalizeTestimonialAccessibility();
     addStyle();
   };
