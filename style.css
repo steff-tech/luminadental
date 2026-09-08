@@ -6,3 +6,13 @@
   transform: none;
   filter: none;
 }
+
+/* Center the FAQ expand/collapse icon within its hit area. */
+.faq-icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
