@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- =========================
+       BASIC PAGE SETTINGS
+  ========================== -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lumina Dental Studio — Modern Dentistry, Elevated</title>
+
+
+    <!-- =========================
+       GOOGLE FONTS
+  ========================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- =========================
+       WEBSITE STYLES
+  ========================== -->
+
+    <style>
+        /* =========================
+       DESIGN VARIABLES
+    ========================== */
+
+        :root {
+            --white: #fff;
+            --surface: #f8f9fa;
+            --ink: #2b2d42;
+            --muted: #6d7080;
+            --line: #e5e7eb;
+
+            --mint: #4ca794;
+            --mint-dark: #398879;
+            --mint-soft: #eaf6f3;
+
+            --max: 1240px;
+
+            --shadow: 0 12px 35px rgba(43, 45, 66, 0.06);
+        }
+
+
+        /* =========================
+       RESET & BASE STYLES
+    ========================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+
+            color: var(--ink);
+            background: var(--white);
+
+            font-family: Inter, Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =========================
+       GLOBAL LAYOUT
+    ========================== */
+
+        .container {
+            width: min(var(--max),
+                    calc(100% - 120px));
+
+            margin: auto;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .soft {
+            background: var(--surface);
+        }
+
+
+        /* =========================
+       TYPOGRAPHY
+    ========================== */
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin-top: 0;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--ink);
+
+            font-family: "Plus Jakarta Sans", Arial, sans-serif;
+            letter-spacing: -0.045em;
+        }
+
+        h1 {
+            margin-bottom: 24px;
+
+            font-size: clamp(56px, 5.4vw, 82px);
+            line-height: 1.03;
+            font-weight: 800;
+        }
+
+        h2 {
+            margin-bottom: 18px;
+
+            font-size: clamp(38px, 3.5vw, 56px);
+            line-height: 1.1;
+            font-weight: 700;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+
+            font-size: 21px;
+            line-height: 1.3;
+        }
+
+        p {
+            color: var(--muted);
+        }
+
+        .lead {
+            max-width: 520px;
+            margin-bottom: 30px;
+
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .intro {
+            max-width: 590px;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================
+       EYEBROW LABEL
+    ========================== */
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            margin-bottom: 18px;
+
+            color: var(--mint-dark);
+
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+
+            width: 28px;
+            height: 1px;
+
+            background: currentColor;
+        }
+
+
+        /* =========================
+       BUTTONS & LINKS
+    ========================== */
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 52px;
+            padding: 0 24px;
+
+            border: 1px solid var(--ink);
+            border-radius: 4px;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            transform: translateY(-1px);
+        }
+
+        .primary {
+            color: var(--white);
+
+            background: var(--mint);
+            border-color: var(--mint);
+        }
+
+        .primary:hover {
+            background: var(--mint-dark);
+            border-color: var(--mint-dark);
+        }
+
+        .link {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .arrow {
+            color: var(--mint);
+
+            font-size: 18px;
+        }
+
+
+        /* =========================
+       HEADER & NAVIGATION
+    ========================== */
+
+        .site-header {
+            height: 88px;
+
+            border-bottom: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.97);
+        }
+
+        .header {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+
+            height: 100%;
+        }
+
+        .brand,
+        .footer-brand {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 23px;
+            font-weight: 800;
+            letter-spacing: 0.13em;
+        }
+
+        .brand span,
+        .footer-brand span {
+            color: var(--mint);
+            letter-spacing: 0;
+        }
+
+        .nav {
+            display: flex;
+            gap: 34px;
+
+            color: #4d5060;
+
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .header-action {
+            justify-self: end;
+
+            min-height: 46px;
+            padding: 0 19px;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+       HERO SECTION
+    ========================== */
+
+        .hero {
+            padding: 64px 0 92px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 0.92fr 1.08fr;
+            gap: 76px;
+            align-items: center;
+        }
+
+        .hero-copy {
+            padding: 34px 0;
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+            flex-wrap: wrap;
+        }
+
+        .hero-wrap {
+            position: relative;
+
+            min-height: 620px;
+        }
+
+        .hero-image {
+            height: 620px;
+
+            box-shadow: var(--shadow);
+        }
+
+        .caption {
+            position: absolute;
+
+            right: -34px;
+            bottom: 34px;
+
+            width: 205px;
+            padding: 18px 20px;
+
+            color: var(--muted);
+            background: var(--white);
+            border: 1px solid var(--line);
+
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .caption strong {
+            display: block;
+
+            margin-bottom: 3px;
+
+            color: var(--ink);
+
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 12px;
+        }
+
+
+        /* =========================
+       TRUST SECTION
+    ========================== */
+
+        .trust {
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+
+            min-height: 112px;
+            padding: 28px;
+
+            border-right: 1px solid var(--line);
+        }
+
+        .trust-item:last-child {
+            border-right: 0;
+        }
+
+        .trust-icon {
+            display: grid;
+            place-items: center;
+
+            width: 34px;
+            height: 34px;
+            flex: 0 0 auto;
+
+            color: var(--mint-dark);
+            border: 1px solid #cce7e1;
+            border-radius: 50%;
+
+            font-size: 15px;
+        }
+
+        .trust-item strong {
+            display: block;
+
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 13px;
+        }
+
+        .trust-item span {
+            display: block;
+
+            color: var(--muted);
+
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+       SECTION HEADINGS
+    ========================== */
+
+        .section-head {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 60px;
+
+            margin-bottom: 54px;
+        }
+
+
+        /* =========================
+       SERVICES SECTION
+    ========================== */
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .service {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            min-height: 335px;
+            padding: 36px;
+
+            border: 1px solid var(--line);
+
+            transition: 0.2s;
+        }
+
+        .service:hover {
+            transform: translateY(-3px);
+
+            border-color: #cbd8d5;
+            box-shadow: var(--shadow);
+        }
+
+        .icon {
+            display: grid;
+            place-items: center;
+
+            width: 46px;
+            height: 46px;
+
+            margin-bottom: 30px;
+
+            color: var(--mint-dark);
+            background: var(--mint-soft);
+            border: 1px solid #d8ece7;
+            border-radius: 3px;
+        }
+
+        .icon svg {
+            width: 22px;
+            height: 22px;
+
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.7;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .service p {
+            font-size: 14px;
+        }
+
+        .service .link {
+            margin-top: auto;
+            padding-top: 22px;
+        }
+
+
+        /* =========================
+       LUMINA EXPERIENCE SECTION
+    ========================== */
+
+        .vibe {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 88px;
+            align-items: center;
+        }
+
+        .vibe-image {
+            width: 100%;
+            height: 100%;
+            min-height: 640px;
+        }
+
+        .benefits {
+            margin: 32px 0 34px;
+            padding: 0;
+
+            list-style: none;
+        }
+
+        .benefits li {
+            display: flex;
+            gap: 14px;
+
+            padding: 14px 0;
+
+            color: #555867;
+            border-top: 1px solid var(--line);
+
+            font-size: 14px;
+        }
+
+        .benefits li:last-child {
+            border-bottom: 1px solid var(--line);
+        }
+
+        .check {
+            display: grid;
+            place-items: center;
+
+            width: 19px;
+            height: 19px;
+            flex: 0 0 auto;
+
+            margin-top: 3px;
+
+            color: var(--mint-dark);
+            background: var(--mint-soft);
+            border-radius: 50%;
+
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+
+        /* =========================
+       EXPERTS SECTION
+    ========================== */
+
+        .experts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+
+            width: min(880px, 100%);
+        }
+
+        .expert-image {
+            height: 490px;
+
+            object-position: center top;
+        }
+
+        .expert-copy {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 24px;
+
+            padding: 24px 0 0;
+        }
+
+        .expert-copy h3 {
+            margin-bottom: 4px;
+        }
+
+        .expert-copy p {
+            margin: 0;
+
+            font-size: 13px;
+        }
+
+        .credential {
+            padding-top: 4px;
+
+            color: var(--mint-dark);
+
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+
+        /* =========================
+       INSURANCE SECTION
+    ========================== */
+
+        .insurance {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 72px;
+            align-items: center;
+
+            padding: 54px 0;
+        }
+
+        .insurance h2 {
+            margin-bottom: 8px;
+
+            font-size: 38px;
+        }
+
+        .insurance p {
+            margin: 0;
+
+            font-size: 14px;
+        }
+
+        .logos {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+        }
+
+        .logo {
+            display: grid;
+            place-items: center;
+
+            height: 68px;
+
+            color: #8b8e99;
+            background: var(--white);
+            border: 1px solid var(--line);
+
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+
+        /* =========================
+       TESTIMONIALS SECTION
+    ========================== */
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        .testimonial {
+            padding: 38px 40px;
+
+            background: var(--surface);
+            border-top: 1px solid var(--ink);
+        }
+
+        .stars {
+            margin-bottom: 26px;
+
+            color: var(--mint-dark);
+
+            font-size: 13px;
+            letter-spacing: 3px;
+        }
+
+        .testimonial blockquote {
+            margin: 0 0 28px;
+
+            color: var(--ink);
+
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 21px;
+            line-height: 1.55;
+            letter-spacing: -0.02em;
+        }
+
+        .patient {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+
+            padding-top: 18px;
+
+            border-top: 1px solid var(--line);
+        }
+
+        .patient strong {
+            display: block;
+
+            font-size: 13px;
+        }
+
+        .patient span {
+            color: var(--muted);
+
+            font-size: 11px;
+        }
+
+
+        /* =========================
+       FOOTER
+    ========================== */
+
+        .site-footer {
+            padding: 76px 0 24px;
+
+            color: var(--white);
+            background: var(--ink);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.45fr 0.9fr 1fr 1.25fr;
+            gap: 58px;
+
+            padding-bottom: 62px;
+        }
+
+        .footer-brand {
+            margin-bottom: 20px;
+
+            color: var(--white);
+
+            font-size: 21px;
+        }
+
+        .site-footer h3 {
+            margin-bottom: 17px;
+
+            color: var(--white);
+
+            font-size: 13px;
+        }
+
+        .site-footer p,
+        .site-footer li,
+        .site-footer a {
+            color: #b8bbc7;
+
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .footer-list {
+            margin: 0;
+            padding: 0;
+
+            list-style: none;
+        }
+
+        .footer-list li {
+            margin-bottom: 5px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+
+            padding-top: 24px;
+
+            color: #858998;
+            border-top: 1px solid rgba(255, 255, 255, 0.14);
+
+            font-size: 11px;
+        }
+
+        .socials {
+            display: flex;
+            gap: 8px;
+        }
+
+        .social {
+            display: grid;
+            place-items: center;
+
+            width: 28px;
+            height: 28px;
+
+            color: #d9dce3;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 50%;
+
+            font-size: 10px;
+        }
+
+
+        /* =========================
+       TABLET RESPONSIVE STYLES
+    ========================== */
+
+        @media (max-width: 980px) {
+
+            .container {
+                width: min(var(--max),
+                        calc(100% - 64px));
+            }
+
+            .hero-grid,
+            .vibe,
+            .insurance {
+                gap: 48px;
+            }
+
+            .nav {
+                gap: 18px;
+            }
+
+            .caption {
+                right: 16px;
+            }
+
+            .trust-item {
+                padding: 22px 16px;
+            }
+
+        }
+
+
+        /* =========================
+       MOBILE RESPONSIVE STYLES
+    ========================== */
+
+        @media (max-width: 760px) {
+
+            .container {
+                width: min(var(--max),
+                        calc(100% - 40px));
+            }
+
+            .header {
+                grid-template-columns: 1fr auto;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .hero-grid,
+            .vibe,
+            .insurance {
+                grid-template-columns: 1fr;
+            }
+
+            .services,
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .trust-item:nth-child(2) {
+                border-right: 0;
+            }
+
+            .trust-item:nth-child(-n + 2) {
+                border-bottom: 1px solid var(--line);
+            }
+
+            .section-head {
+                display: block;
+            }
+
+            .section-head .intro {
+                margin-top: 18px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+       HEADER
+  ========================== -->
+
+    <header class="site-header">
+
+        <div class="container header">
+
+            <!-- Logo -->
+
+            <a class="brand" href="#">
+                LUMINA<span>.</span>
+            </a>
+
+
+            <!-- Navigation -->
+
+            <nav class="nav">
+
+                <a href="#services">
+                    Services
+                </a>
+
+                <a href="#clinic">
+                    About Us
+                </a>
+
+                <a href="#guide">
+                    Patient Guide
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <!-- Header CTA -->
+
+            <a class="button primary header-action" href="#contact">
+                Book an Appointment
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+       MAIN CONTENT
+  ========================== -->
+
+    <main>
+
+
+        <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+        <section class="hero">
+
+            <div class="container hero-grid">
+
+
+                <!-- Hero Content -->
+
+                <div class="hero-copy">
+
+                    <span class="eyebrow">
+                        Dental care, reimagined
+                    </span>
+
+                    <h1>
+                        Modern Dentistry,
+                        <br>
+                        Elevated.
+                    </h1>
+
+                    <p class="lead">
+                        Thoughtful dental care in a calm,
+                        beautifully considered space.
+                        Designed around your comfort,
+                        confidence, and long-term wellbeing.
+                    </p>
+
+
+                    <div class="actions">
+
+                        <a class="button primary" href="#contact">
+                            Book Your Visit
+                        </a>
+
+                        <a class="link" href="#clinic">
+                            Discover Lumina
+                            <span class="arrow">
+                                →
+                            </span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Hero Image -->
+
+                <div class="hero-wrap">
+
+                    <img class="hero-image"
+                        src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=85"
+                        alt="Bright modern dental clinic interior">
+
+
+                    <!-- Image Caption -->
+
+                    <div class="caption">
+
+                        <strong>
+                            Made for calm.
+                        </strong>
+
+                        A more thoughtful kind of dental
+                        experience in BGC.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+         SERVICES SECTION
+    ========================== -->
+
+        <section class="section" id="services">
+
+            <div class="container">
+
+
+                <!-- Section Header -->
+
+                <div class="section-head">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            Our services
+                        </span>
+
+                        <h2>
+                            Care that feels considered.
+                        </h2>
+
+                    </div>
+
+
+                    <p class="intro">
+                        From subtle cosmetic enhancements
+                        to everyday preventive care,
+                        every treatment begins with listening
+                        and ends with a plan tailored to you.
+                    </p>
+
+                </div>
+
+
+                <!-- Service Cards -->
+
+                <div class="services">
+
+
+                    <!-- Service 1 -->
+
+                    <article class="service">
+
+                        <div class="icon">
+
+                            <svg viewBox="0 0 24 24">
+
+                                <path
+                                    d="M8 3.5c1.2.6 2.6.9 4 .9s2.8-.3 4-.9c1.9 1.5 2.5 4.1 1.5 6.3-.7 1.6-1.4 3.2-1.9 4.9l-1 3.3c-.3 1-.8 2-1.6 2-1.3 0-1.2-3.1-2.7-3.1S9.2 20 7.9 20c-.8 0-1.3-1-1.6-2l-1-3.3c-.5-1.7-1.2-3.3-1.9-4.9-1-2.2-.4-4.8 1.5-6.3 1.2.6 2.6.9 4 .9Z" />
+
+                            </svg>
+
+                        </div>
+
+                        <h3>
+                            Cosmetic Dentistry
+                        </h3>
+
+                        <p>
+                            Natural-looking treatments designed
+                            to enhance your smile while preserving
+                            what makes it uniquely yours.
+                        </p>
+
+                        <a class="link" href="#">
+                            Learn More
+
+                            <span class="arrow">
+                                →
+                            </span>
+                        </a>
+
+                    </article>
+
+
+                    <!-- Service 2 -->
+
+                    <article class="service">
+
+                        <div class="icon">
+
+                            <svg viewBox="0 0 24 24">
+
+                                <path d="M7 5.5h10M7 18.5h10M9 8h6M9 16h6M6 3.5v17M18 3.5v17" />
+
+                            </svg>
+
+                        </div>
+
+                        <h3>
+                            Invisalign & Clear Aligners
+                        </h3>
+
+                        <p>
+                            A discreet, modern approach to
+                            orthodontic treatment with guidance
+                            and planning at every stage.
+                        </p>
+
+                        <a class="link" href="#">
+                            Learn More
+
+                            <span class="arrow">
+                                →
+                            </span>
+                        </a>
+
+                    </article>
+
+
+                    <!-- Service 3 -->
+
+                    <article class="service">
+
+                        <div class="icon">
+
+                            <svg viewBox="0 0 24 24">
+
+                                <path d="M12 3v18M3 12h18M5.5 5.5l13 13M18.5 5.5l-13 13" />
+
+                            </svg>
+
+                        </div>
+
+                        <h3>
+                            General & Preventive Care
+                        </h3>
+
+                        <p>
+                            Essential care focused on protecting
+                            your oral health and helping you feel
+                            at ease year after year.
+                        </p>
+
+                        <a class="link" href="#">
+                            Learn More
+
+                            <span class="arrow">
+                                →
+                            </span>
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+         LUMINA EXPERIENCE
+    ========================== -->
+
+        <section class="section soft" id="clinic">
+
+            <div class="container vibe">
+
+
+                <!-- Clinic Image -->
+
+                <img class="vibe-image"
+                    src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1200&q=85"
+                    alt="Calm refined dental clinic environment">
+
+
+                <!-- Clinic Content -->
+
+                <div>
+
+                    <span class="eyebrow">
+                        The Lumina experience
+                    </span>
+
+                    <h2>
+                        Dentistry for people who'd rather
+                        be anywhere else.
+                    </h2>
+
+                    <p class="lead">
+                        We understand that dental visits can
+                        feel intimidating. Lumina is designed
+                        to slow things down, make things clearer,
+                        and help you feel genuinely comfortable
+                        from the moment you arrive.
+                    </p>
+
+
+                    <!-- Benefits -->
+
+                    <ul class="benefits">
+
+                        <li>
+
+                            <span class="check">
+                                ✓
+                            </span>
+
+                            <span>
+                                A calm, sensory-considered environment
+                                that feels more like a wellness studio.
+                            </span>
+
+                        </li>
+
+
+                        <li>
+
+                            <span class="check">
+                                ✓
+                            </span>
+
+                            <span>
+                                Clear explanations and collaborative
+                                decisions, without pressure or jargon.
+                            </span>
+
+                        </li>
+
+
+                        <li>
+
+                            <span class="check">
+                                ✓
+                            </span>
+
+                            <span>
+                                Gentle, attentive care paced around
+                                your individual comfort.
+                            </span>
+
+                        </li>
+
+                    </ul>
+
+
+                    <a class="button" href="#">
+                        Experience the Difference
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+         DOCTORS SECTION
+    ========================== -->
+
+        <section class="section">
+
+            <div class="container">
+
+
+                <!-- Section Header -->
+
+                <div class="section-head">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            Our Doctors
+                        </span>
+
+                        <h2>
+                            Meet the Experts.
+                        </h2>
+
+                    </div>
+
+
+                    <p class="intro">
+                        Experienced doctors with a shared belief
+                        that exceptional dentistry should also feel
+                        human, personal, and reassuring.
+                    </p>
+
+                </div>
+
+
+                <!-- Expert Cards -->
+
+                <div class="experts">
+
+
+                    <!-- Expert 1 -->
+
+                    <article>
+
+                        <img class="expert-image"
+                            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=85"
+                            alt="Lead dentist portrait">
+
+                        <div class="expert-copy">
+
+                            <div>
+
+                                <h3>
+                                    Dr. Andrea Reyes
+                                </h3>
+
+                                <p>
+                                    Lead Dentist · Aesthetic & Restorative Care
+                                </p>
+
+                            </div>
+
+
+                            <span class="credential">
+                                DMD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Expert 2 -->
+
+                    <article>
+
+                        <img class="expert-image"
+                            src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=900&q=85"
+                            alt="Lead dentist portrait">
+
+                        <div class="expert-copy">
+
+                            <div>
+
+                                <h3>
+                                    Dr. Miguel Santos
+                                </h3>
+
+                                <p>
+                                    Lead Dentist · Orthodontics & Preventive Care
+                                </p>
+
+                            </div>
+
+
+                            <span class="credential">
+                                DMD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+         INSURANCE SECTION
+    ========================== -->
+
+        <section class="section soft" id="guide">
+
+            <div class="container insurance">
+
+
+                <!-- Insurance Content -->
+
+                <div>
+
+                    <span class="eyebrow">
+                        Payment made simple
+                    </span>
+
+                    <h2>
+                        Insurance & flexible options.
+                    </h2>
+
+                    <p>
+                        We work with selected HMOs and payment
+                        partners to make quality care easier
+                        to plan for.
+                    </p>
+
+                </div>
+
+
+                <!-- Insurance Logos -->
+
+                <div class="logos">
+
+                    <div class="logo">
+                        HMO ONE
+                    </div>
+
+                    <div class="logo">
+                        HMO TWO
+                    </div>
+
+                    <div class="logo">
+                        INSURE
+                    </div>
+
+                    <div class="logo">
+                        VISA
+                    </div>
+
+                    <div class="logo">
+                        MASTERCARD
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+         TESTIMONIALS SECTION
+    ========================== -->
+
+        <section class="section">
+
+            <div class="container">
+
+
+                <!-- Section Header -->
+
+                <div class="section-head">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            Patient stories
+                        </span>
+
+                        <h2>
+                            Kind words, naturally.
+                        </h2>
+
+                    </div>
+
+
+                    <p class="intro">
+                        A few reflections from patients who
+                        discovered that dental care can feel
+                        very different.
+                    </p>
+
+                </div>
+
+
+                <!-- Testimonials -->
+
+                <div class="testimonials">
+
+
+                    <!-- Testimonial 1 -->
+
+                    <article class="testimonial">
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <blockquote>
+                            “For the first time, a dental appointment
+                            actually felt calm. Everything was explained
+                            clearly and the entire space felt thoughtful
+                            without being intimidating.”
+                        </blockquote>
+
+
+                        <div class="patient">
+
+                            <div>
+
+                                <strong>
+                                    Camille R.
+                                </strong>
+
+                                <span>
+                                    Cosmetic Dentistry
+                                </span>
+
+                            </div>
+
+
+                            <span>
+                                BGC, Taguig
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Testimonial 2 -->
+
+                    <article class="testimonial">
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <blockquote>
+                            “The experience feels completely different
+                            from a traditional clinic. Warm, professional,
+                            and incredibly attentive from the moment
+                            I walked in.”
+                        </blockquote>
+
+
+                        <div class="patient">
+
+                            <div>
+
+                                <strong>
+                                    Marcus L.
+                                </strong>
+
+                                <span>
+                                    Clear Aligners
+                                </span>
+
+                            </div>
+
+
+                            <span>
+                                Taguig City
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================
+       FOOTER
+  ========================== -->
+
+    <footer class="site-footer" id="contact">
+
+        <div class="container">
+
+
+            <!-- Footer Grid -->
+
+            <div class="footer-grid">
+
+
+                <!-- Brand -->
+
+                <div>
+
+                    <div class="footer-brand">
+                        LUMINA<span>.</span>
+                    </div>
+
+                    <p>
+                        Modern, thoughtful dental care designed
+                        around comfort, confidence, and wellbeing.
+                    </p>
+
+                </div>
+
+
+                <!-- Quick Links -->
+
+                <div>
+
+                    <h3>
+                        Quick Links
+                    </h3>
+
+                    <ul class="footer-list">
+
+                        <li>
+                            <a href="#services">
+                                Services
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#clinic">
+                                About Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#guide">
+                                Patient Guide
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#contact">
+                                Contact
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- Services -->
+
+                <div>
+
+                    <h3>
+                        Services
+                    </h3>
+
+                    <ul class="footer-list">
+
+                        <li>
+                            <a href="#">
+                                Cosmetic Dentistry
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Clear Aligners
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Preventive Care
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Restorative Dentistry
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- Contact Information -->
+
+                <div>
+
+                    <h3>
+                        Visit Lumina
+                    </h3>
+
+                    <ul class="footer-list">
+
+                        <li>
+                            BGC, Taguig, Metro Manila
+                        </li>
+
+                        <li>
+                            +63 (2) 8XXX XXXX
+                        </li>
+
+                        <li>
+                            hello@luminadental.ph
+                        </li>
+
+                        <li>
+                            Mon–Sat · 9:00 AM–6:00 PM
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <!-- Footer Bottom -->
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 Lumina Dental Studio.
+                    All rights reserved.
+                </span>
+
+
+                <!-- Social Links -->
+
+                <div class="socials">
+
+                    <a class="social" href="#">
+                        IG
+                    </a>
+
+                    <a class="social" href="#">
+                        f
+                    </a>
+
+                    <a class="social" href="#">
+                        in
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

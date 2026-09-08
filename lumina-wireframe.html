@@ -1,0 +1,2138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Low-Fidelity Website Wireframe</title>
+
+  <style>
+
+    /* =====================================================
+       WIREFRAME VARIABLES
+    ===================================================== */
+
+    :root {
+      --gray-1: #eeeeee;
+      --gray-2: #dddddd;
+      --gray-3: #c8c8c8;
+      --gray-4: #aaaaaa;
+      --gray-5: #888888;
+      --dark: #555555;
+
+      --border: #cccccc;
+
+      --container:
+        min(1240px, calc(100% - 80px));
+
+      --radius: 12px;
+    }
+
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      color: var(--dark);
+
+      background: #ffffff;
+    }
+
+
+    /* =====================================================
+       GLOBAL
+    ===================================================== */
+
+    .container {
+      width: var(--container);
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .placeholder {
+      background: var(--gray-2);
+    }
+
+    .text-line {
+      height: 12px;
+
+      margin-bottom: 10px;
+
+      background: var(--gray-3);
+
+      border-radius: 3px;
+    }
+
+    .text-line.short {
+      width: 45%;
+    }
+
+    .text-line.medium {
+      width: 70%;
+    }
+
+    .text-line.long {
+      width: 100%;
+    }
+
+    .text-line.title {
+      height: 26px;
+      width: 80%;
+
+      margin-bottom: 12px;
+
+      background: var(--gray-4);
+    }
+
+    .eyebrow-box {
+      width: 110px;
+      height: 10px;
+
+      margin-bottom: 18px;
+
+      background: var(--gray-4);
+
+      border-radius: 3px;
+    }
+
+    .button-box {
+      width: 150px;
+      height: 48px;
+
+      background: var(--gray-4);
+
+      border-radius: 999px;
+    }
+
+
+    /* =====================================================
+       NAVIGATION
+    ===================================================== */
+
+    .nav {
+      height: 88px;
+
+      border-bottom:
+        1px solid var(--border);
+
+      background: #ffffff;
+    }
+
+    .nav-inner {
+      height: 100%;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr auto 1fr;
+
+      align-items: center;
+
+      gap: 30px;
+    }
+
+    .logo-box {
+      width: 130px;
+      height: 22px;
+
+      background: var(--gray-4);
+
+      border-radius: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+
+      align-items: center;
+
+      gap: 30px;
+    }
+
+    .nav-link {
+      width: 55px;
+      height: 10px;
+
+      background: var(--gray-3);
+
+      border-radius: 3px;
+    }
+
+    .phone-box {
+      justify-self: end;
+
+      width: 140px;
+      height: 12px;
+
+      background: var(--gray-3);
+
+      border-radius: 3px;
+    }
+
+
+    /* =====================================================
+       ANNOUNCEMENT BAR
+    ===================================================== */
+
+    .announcement {
+      height: 44px;
+
+      overflow: hidden;
+
+      background: var(--gray-4);
+
+      display: flex;
+
+      align-items: center;
+    }
+
+    .announcement-track {
+      display: flex;
+
+      gap: 70px;
+
+      width: max-content;
+    }
+
+    .announcement-item {
+      width: 300px;
+      height: 10px;
+
+      background: var(--gray-1);
+
+      border-radius: 3px;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero {
+      min-height: 680px;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background: var(--gray-1);
+    }
+
+    .hero-inner {
+      min-height: 680px;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      align-items: center;
+    }
+
+    .hero-copy {
+      position: relative;
+
+      z-index: 2;
+
+      padding-right: 70px;
+    }
+
+    .hero-title {
+      width: 90%;
+      height: 105px;
+
+      margin-bottom: 25px;
+
+      background: var(--gray-4);
+
+      border-radius: 6px;
+    }
+
+    .hero-description {
+      width: 85%;
+
+      margin-bottom: 30px;
+    }
+
+    .hero-description .text-line {
+      height: 11px;
+    }
+
+    .hero-note {
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      margin-top: 25px;
+    }
+
+    .avatar-row {
+      display: flex;
+    }
+
+    .avatar {
+      width: 38px;
+      height: 38px;
+
+      margin-left: -8px;
+
+      background: var(--gray-3);
+
+      border:
+        2px solid #ffffff;
+
+      border-radius: 50%;
+    }
+
+    .avatar:first-child {
+      margin-left: 0;
+    }
+
+    .hero-note-text {
+      width: 180px;
+      height: 25px;
+
+      background: var(--gray-3);
+
+      border-radius: 3px;
+    }
+
+    .hero-image {
+      height: 570px;
+
+      background: var(--gray-3);
+
+      border-radius:
+        30px 0 0 30px;
+    }
+
+
+    /* =====================================================
+       TRUST STRIP
+    ===================================================== */
+
+    .trust {
+      min-height: 112px;
+
+      border-top:
+        1px solid var(--border);
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+    .trust-inner {
+      min-height: 112px;
+
+      display: grid;
+
+      grid-template-columns:
+        1.2fr
+        repeat(4, 1fr);
+
+      align-items: center;
+
+      gap: 28px;
+    }
+
+    .trust-label {
+      width: 130px;
+      height: 30px;
+
+      background: var(--gray-3);
+
+      border-radius: 3px;
+    }
+
+    .trust-logo {
+      width: 100px;
+      height: 30px;
+
+      margin: auto;
+
+      background: var(--gray-2);
+
+      border-radius: 4px;
+    }
+
+
+    /* =====================================================
+       SERVICES
+    ===================================================== */
+
+    .section-heading {
+      display: flex;
+
+      align-items: flex-end;
+
+      justify-content: space-between;
+
+      gap: 40px;
+
+      margin-bottom: 50px;
+    }
+
+    .heading-content {
+      width: 50%;
+    }
+
+    .heading-title {
+      width: 360px;
+      height: 70px;
+
+      background: var(--gray-4);
+
+      border-radius: 5px;
+    }
+
+    .heading-description {
+      width: 330px;
+    }
+
+    .service-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 22px;
+    }
+
+    .service-card {
+      min-height: 430px;
+
+      overflow: hidden;
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        var(--radius);
+
+      background: #ffffff;
+    }
+
+    .service-image {
+      height: 210px;
+
+      background: var(--gray-2);
+    }
+
+    .service-content {
+      padding: 26px 30px;
+    }
+
+    .service-title {
+      width: 70%;
+      height: 20px;
+
+      margin-bottom: 18px;
+
+      background: var(--gray-4);
+
+      border-radius: 3px;
+    }
+
+    .service-text {
+      margin-bottom: 25px;
+    }
+
+    .service-link {
+      width: 80px;
+      height: 10px;
+
+      background: var(--gray-4);
+
+      border-radius: 3px;
+    }
+
+
+    /* =====================================================
+       ABOUT
+    ===================================================== */
+
+    .about {
+      background: var(--gray-1);
+    }
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      align-items: center;
+
+      gap: 76px;
+    }
+
+    .about-image {
+      height: 570px;
+
+      background: var(--gray-3);
+
+      border-radius:
+        30px;
+    }
+
+    .about-copy {
+      max-width: 500px;
+    }
+
+    .about-title {
+      width: 360px;
+      height: 70px;
+
+      margin-bottom: 22px;
+
+      background: var(--gray-4);
+
+      border-radius: 5px;
+    }
+
+    .about-description {
+      margin-bottom: 30px;
+    }
+
+    .feature-list {
+      display: grid;
+
+      gap: 20px;
+    }
+
+    .feature {
+      display: flex;
+
+      gap: 14px;
+
+      padding-bottom: 18px;
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+    .feature-icon {
+      flex-shrink: 0;
+
+      width: 26px;
+      height: 26px;
+
+      background: var(--gray-4);
+
+      border-radius: 50%;
+    }
+
+    .feature-content {
+      flex: 1;
+    }
+
+    .feature-title {
+      width: 160px;
+      height: 12px;
+
+      margin-bottom: 9px;
+
+      background: var(--gray-4);
+
+      border-radius: 3px;
+    }
+
+
+    /* =====================================================
+       OUR TEAM
+    ===================================================== */
+
+    .team-heading {
+      max-width: 670px;
+
+      margin:
+        0 auto 48px;
+
+      text-align: center;
+    }
+
+    .team-title {
+      width: 300px;
+      height: 55px;
+
+      margin: 0 auto 20px;
+
+      background: var(--gray-4);
+
+      border-radius: 5px;
+    }
+
+    .team-description {
+      width: 430px;
+      max-width: 100%;
+
+      margin: 0 auto;
+    }
+
+    .team-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 24px;
+    }
+
+    .team-card {
+      overflow: hidden;
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        var(--radius);
+
+      background: var(--gray-1);
+    }
+
+    .team-image {
+      height: 350px;
+
+      background: var(--gray-2);
+    }
+
+    .team-info {
+      padding: 22px 24px 25px;
+
+      background: #ffffff;
+    }
+
+    .team-name {
+      width: 160px;
+      height: 17px;
+
+      margin-bottom: 10px;
+
+      background: var(--gray-4);
+
+      border-radius: 3px;
+    }
+
+    .team-specialization {
+      width: 190px;
+      height: 10px;
+
+      margin-bottom: 18px;
+
+      background: var(--gray-3);
+
+      border-radius: 3px;
+    }
+
+    .social-icons {
+      display: flex;
+
+      gap: 8px;
+    }
+
+    .social-icon {
+      width: 25px;
+      height: 25px;
+
+      background: var(--gray-3);
+
+      border-radius: 50%;
+    }
+
+
+    /* =====================================================
+       INSURANCE
+    ===================================================== */
+
+    .insurance {
+      padding:
+        0 0 100px;
+    }
+
+    .insurance-banner {
+      min-height: 180px;
+
+      display: grid;
+
+      grid-template-columns:
+        0.9fr 1.6fr;
+
+      align-items: center;
+
+      gap: 60px;
+
+      padding: 42px 46px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        var(--radius);
+
+      background: var(--gray-1);
+    }
+
+    .insurance-title {
+      width: 300px;
+      height: 50px;
+
+      margin-bottom: 15px;
+
+      background: var(--gray-4);
+
+      border-radius: 4px;
+    }
+
+    .insurance-description {
+      width: 260px;
+    }
+
+    .insurance-logos {
+      display: grid;
+
+      grid-template-columns:
+        repeat(5, 1fr);
+
+      gap: 20px;
+    }
+
+    .insurance-logo {
+      height: 35px;
+
+      background: var(--gray-2);
+
+      border-radius: 4px;
+    }
+
+
+    /* =====================================================
+       TESTIMONIALS
+    ===================================================== */
+
+    .testimonials {
+      overflow: hidden;
+
+      background: var(--gray-1);
+    }
+
+    .testimonial-heading {
+      max-width: 670px;
+
+      margin:
+        0 auto 48px;
+
+      text-align: center;
+    }
+
+    .testimonial-title {
+      width: 330px;
+      height: 55px;
+
+      margin: 0 auto 20px;
+
+      background: var(--gray-4);
+
+      border-radius: 5px;
+    }
+
+    .testimonial-track-wrapper {
+      width: 100%;
+
+      overflow: hidden;
+    }
+
+    .testimonial-track {
+      display: flex;
+
+      gap: 22px;
+
+      width: max-content;
+    }
+
+    .testimonial-card {
+      position: relative;
+
+      flex:
+        0 0 360px;
+
+      min-height: 300px;
+
+      padding: 34px 28px 28px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 20px;
+
+      background: #ffffff;
+    }
+
+    .quote-mark {
+      position: absolute;
+
+      top: 5px;
+      right: 18px;
+
+      width: 80px;
+      height: 80px;
+
+      background: var(--gray-1);
+
+      border-radius: 10px;
+    }
+
+    .stars {
+      width: 90px;
+      height: 14px;
+
+      margin-bottom: 25px;
+
+      background: var(--gray-4);
+
+      border-radius: 3px;
+    }
+
+    .testimonial-lines {
+      margin-bottom: 25px;
+    }
+
+    .reviewer {
+      width: 120px;
+      height: 12px;
+
+      margin-top: 20px;
+
+      background: var(--gray-4);
+
+      border-radius: 3px;
+    }
+
+    .reviewer-detail {
+      width: 150px;
+      height: 9px;
+
+      margin-top: 8px;
+
+      background: var(--gray-3);
+
+      border-radius: 3px;
+    }
+
+    .carousel-dots {
+      display: flex;
+
+      justify-content: center;
+
+      gap: 8px;
+
+      margin-top: 30px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+
+      background: var(--gray-3);
+
+      border-radius: 50%;
+    }
+
+    .dot.active {
+      width: 24px;
+
+      border-radius: 999px;
+
+      background: var(--gray-5);
+    }
+
+    .review-button {
+      margin:
+        35px auto 0;
+    }
+
+
+    /* =====================================================
+       FAQ
+    ===================================================== */
+
+    .faq-grid {
+      display: grid;
+
+      grid-template-columns:
+        0.85fr 1.15fr;
+
+      gap: 90px;
+
+      align-items: start;
+    }
+
+    .faq-title {
+      width: 300px;
+      height: 55px;
+
+      margin-bottom: 20px;
+
+      background: var(--gray-4);
+
+      border-radius: 5px;
+    }
+
+    .faq-list {
+      border-top:
+        1px solid var(--border);
+    }
+
+    .faq-item {
+      min-height: 70px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      padding: 24px 0;
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+    .faq-question {
+      width: 70%;
+      height: 14px;
+
+      background: var(--gray-3);
+
+      border-radius: 3px;
+    }
+
+    .faq-plus {
+      width: 20px;
+      height: 20px;
+
+      background: var(--gray-4);
+
+      border-radius: 3px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+      padding:
+        72px 0 30px;
+
+      background: #ffffff;
+    }
+
+    .footer-grid {
+      display: grid;
+
+      grid-template-columns:
+        1.4fr
+        1fr
+        1fr
+        1.2fr;
+
+      gap: 50px;
+
+      padding-bottom: 54px;
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+    .footer-logo {
+      width: 130px;
+      height: 22px;
+
+      margin-bottom: 20px;
+
+      background: var(--gray-4);
+
+      border-radius: 3px;
+    }
+
+    .footer-title {
+      width: 70px;
+      height: 12px;
+
+      margin-bottom: 18px;
+
+      background: var(--gray-4);
+
+      border-radius: 3px;
+    }
+
+    .footer-lines {
+      width: 130px;
+    }
+
+    .footer-bottom {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      padding-top: 25px;
+    }
+
+    .footer-bottom-box {
+      width: 180px;
+      height: 10px;
+
+      background: var(--gray-3);
+
+      border-radius: 3px;
+    }
+
+
+    /* =====================================================
+       TABLET
+    ===================================================== */
+
+    @media (max-width: 1000px) {
+
+      .container {
+        width:
+          min(100% - 48px, 1240px);
+      }
+
+      .nav-inner {
+        display: flex;
+
+        justify-content: space-between;
+      }
+
+      .nav-links,
+      .phone-box {
+        display: none;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding:
+          90px 0;
+      }
+
+      .hero-image {
+        display: none;
+      }
+
+      .team-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .insurance-banner {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+      }
+
+      .footer-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 650px) {
+
+      :root {
+        --container:
+          min(100% - 32px, 1240px);
+      }
+
+      .section {
+        padding: 75px 0;
+      }
+
+      .nav {
+        height: 72px;
+      }
+
+      .nav-inner {
+        height: 72px;
+      }
+
+      .announcement {
+        height: 40px;
+      }
+
+      .hero {
+        min-height: 680px;
+      }
+
+      .hero-inner {
+        min-height: 680px;
+      }
+
+      .hero-title {
+        height: 120px;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .heading-content {
+        width: 100%;
+      }
+
+      .heading-description {
+        margin-top: 25px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+      }
+
+      .about-image {
+        height: 400px;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .team-heading {
+        text-align: left;
+      }
+
+      .team-title {
+        margin-left: 0;
+      }
+
+      .team-description {
+        margin-left: 0;
+      }
+
+      .insurance-logos {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .testimonial-card {
+        flex-basis: 300px;
+      }
+
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       NAVIGATION
+  ====================================================== -->
+
+  <header class="nav">
+
+    <div class="container nav-inner">
+
+      <div class="logo-box"></div>
+
+      <div class="nav-links">
+
+        <div class="nav-link"></div>
+        <div class="nav-link"></div>
+        <div class="nav-link"></div>
+        <div class="nav-link"></div>
+        <div class="nav-link"></div>
+
+      </div>
+
+      <div class="phone-box"></div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       ANNOUNCEMENT
+  ====================================================== -->
+
+  <section class="announcement">
+
+    <div class="announcement-track">
+
+      <div class="announcement-item"></div>
+      <div class="announcement-item"></div>
+      <div class="announcement-item"></div>
+      <div class="announcement-item"></div>
+      <div class="announcement-item"></div>
+
+    </div>
+
+  </section>
+
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero">
+
+      <div class="container hero-inner">
+
+        <div class="hero-copy">
+
+          <div class="eyebrow-box"></div>
+
+          <div class="hero-title"></div>
+
+          <div class="hero-description">
+
+            <div class="text-line long"></div>
+            <div class="text-line long"></div>
+            <div class="text-line medium"></div>
+
+          </div>
+
+          <div class="button-box"></div>
+
+          <div class="hero-note">
+
+            <div class="avatar-row">
+
+              <div class="avatar"></div>
+              <div class="avatar"></div>
+              <div class="avatar"></div>
+
+            </div>
+
+            <div class="hero-note-text"></div>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-image"></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TRUST
+    ====================================================== -->
+
+    <section class="trust">
+
+      <div class="container trust-inner">
+
+        <div class="trust-label"></div>
+
+        <div class="trust-logo"></div>
+        <div class="trust-logo"></div>
+        <div class="trust-logo"></div>
+        <div class="trust-logo"></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SERVICES
+    ====================================================== -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="heading-content">
+
+            <div class="eyebrow-box"></div>
+
+            <div class="heading-title"></div>
+
+          </div>
+
+          <div class="heading-description">
+
+            <div class="text-line long"></div>
+            <div class="text-line long"></div>
+            <div class="text-line medium"></div>
+
+          </div>
+
+        </div>
+
+
+        <div class="service-grid">
+
+
+          <article class="service-card">
+
+            <div class="service-image"></div>
+
+            <div class="service-content">
+
+              <div class="service-title"></div>
+
+              <div class="service-text">
+
+                <div class="text-line long"></div>
+                <div class="text-line long"></div>
+                <div class="text-line medium"></div>
+
+              </div>
+
+              <div class="service-link"></div>
+
+            </div>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-image"></div>
+
+            <div class="service-content">
+
+              <div class="service-title"></div>
+
+              <div class="service-text">
+
+                <div class="text-line long"></div>
+                <div class="text-line long"></div>
+                <div class="text-line medium"></div>
+
+              </div>
+
+              <div class="service-link"></div>
+
+            </div>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-image"></div>
+
+            <div class="service-content">
+
+              <div class="service-title"></div>
+
+              <div class="service-text">
+
+                <div class="text-line long"></div>
+                <div class="text-line long"></div>
+                <div class="text-line medium"></div>
+
+              </div>
+
+              <div class="service-link"></div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+
+    <section class="section about">
+
+      <div class="container about-grid">
+
+        <div class="about-image"></div>
+
+        <div class="about-copy">
+
+          <div class="eyebrow-box"></div>
+
+          <div class="about-title"></div>
+
+          <div class="about-description">
+
+            <div class="text-line long"></div>
+            <div class="text-line long"></div>
+            <div class="text-line medium"></div>
+
+          </div>
+
+
+          <div class="feature-list">
+
+
+            <div class="feature">
+
+              <div class="feature-icon"></div>
+
+              <div class="feature-content">
+
+                <div class="feature-title"></div>
+
+                <div class="text-line long"></div>
+                <div class="text-line medium"></div>
+
+              </div>
+
+            </div>
+
+
+            <div class="feature">
+
+              <div class="feature-icon"></div>
+
+              <div class="feature-content">
+
+                <div class="feature-title"></div>
+
+                <div class="text-line long"></div>
+                <div class="text-line medium"></div>
+
+              </div>
+
+            </div>
+
+
+            <div class="feature">
+
+              <div class="feature-icon"></div>
+
+              <div class="feature-content">
+
+                <div class="feature-title"></div>
+
+                <div class="text-line long"></div>
+                <div class="text-line medium"></div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         OUR TEAM — 6 CARDS
+    ====================================================== -->
+
+    <section class="section">
+
+      <div class="container">
+
+
+        <div class="team-heading">
+
+          <div class="eyebrow-box" style="margin-left:auto;margin-right:auto;"></div>
+
+          <div class="team-title"></div>
+
+          <div class="team-description">
+
+            <div class="text-line long"></div>
+            <div class="text-line long"></div>
+
+          </div>
+
+        </div>
+
+
+        <div class="team-grid">
+
+
+          <!-- CARD 1 -->
+          <article class="team-card">
+
+            <div class="team-image"></div>
+
+            <div class="team-info">
+
+              <div class="team-name"></div>
+
+              <div class="team-specialization"></div>
+
+              <div class="social-icons">
+                <div class="social-icon"></div>
+                <div class="social-icon"></div>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- CARD 2 -->
+          <article class="team-card">
+
+            <div class="team-image"></div>
+
+            <div class="team-info">
+
+              <div class="team-name"></div>
+
+              <div class="team-specialization"></div>
+
+              <div class="social-icons">
+                <div class="social-icon"></div>
+                <div class="social-icon"></div>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- CARD 3 -->
+          <article class="team-card">
+
+            <div class="team-image"></div>
+
+            <div class="team-info">
+
+              <div class="team-name"></div>
+
+              <div class="team-specialization"></div>
+
+              <div class="social-icons">
+                <div class="social-icon"></div>
+                <div class="social-icon"></div>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- CARD 4 -->
+          <article class="team-card">
+
+            <div class="team-image"></div>
+
+            <div class="team-info">
+
+              <div class="team-name"></div>
+
+              <div class="team-specialization"></div>
+
+              <div class="social-icons">
+                <div class="social-icon"></div>
+                <div class="social-icon"></div>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- CARD 5 -->
+          <article class="team-card">
+
+            <div class="team-image"></div>
+
+            <div class="team-info">
+
+              <div class="team-name"></div>
+
+              <div class="team-specialization"></div>
+
+              <div class="social-icons">
+                <div class="social-icon"></div>
+                <div class="social-icons">
+                  <div class="social-icon"></div>
+                  <div class="social-icon"></div>
+                </div>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- CARD 6 -->
+          <article class="team-card">
+
+            <div class="team-image"></div>
+
+            <div class="team-info">
+
+              <div class="team-name"></div>
+
+              <div class="team-specialization"></div>
+
+              <div class="social-icons">
+                <div class="social-icon"></div>
+                <div class="social-icon"></div>
+              </div>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INSURANCE
+    ====================================================== -->
+
+    <section class="insurance">
+
+      <div class="container">
+
+        <div class="insurance-banner">
+
+          <div>
+
+            <div class="eyebrow-box"></div>
+
+            <div class="insurance-title"></div>
+
+            <div class="insurance-description">
+
+              <div class="text-line long"></div>
+              <div class="text-line medium"></div>
+
+            </div>
+
+          </div>
+
+
+          <div class="insurance-logos">
+
+            <div class="insurance-logo"></div>
+            <div class="insurance-logo"></div>
+            <div class="insurance-logo"></div>
+            <div class="insurance-logo"></div>
+            <div class="insurance-logo"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TESTIMONIAL CAROUSEL
+    ====================================================== -->
+
+    <section class="section testimonials">
+
+      <div class="container">
+
+
+        <div class="testimonial-heading">
+
+          <div
+            class="eyebrow-box"
+            style="margin-left:auto;margin-right:auto;"
+          ></div>
+
+          <div class="testimonial-title"></div>
+
+          <div class="text-line medium"
+            style="margin-left:auto;margin-right:auto;"
+          ></div>
+
+        </div>
+
+
+        <div class="testimonial-track-wrapper">
+
+          <div class="testimonial-track">
+
+
+            <!-- CARD 1 -->
+            <article class="testimonial-card">
+
+              <div class="quote-mark"></div>
+
+              <div class="stars"></div>
+
+              <div class="testimonial-lines">
+
+                <div class="text-line long"></div>
+                <div class="text-line long"></div>
+                <div class="text-line medium"></div>
+
+              </div>
+
+              <div class="reviewer"></div>
+              <div class="reviewer-detail"></div>
+
+            </article>
+
+
+            <!-- CARD 2 -->
+            <article class="testimonial-card">
+
+              <div class="quote-mark"></div>
+
+              <div class="stars"></div>
+
+              <div class="testimonial-lines">
+
+                <div class="text-line long"></div>
+                <div class="text-line long"></div>
+                <div class="text-line medium"></div>
+
+              </div>
+
+              <div class="reviewer"></div>
+              <div class="reviewer-detail"></div>
+
+            </article>
+
+
+            <!-- CARD 3 -->
+            <article class="testimonial-card">
+
+              <div class="quote-mark"></div>
+
+              <div class="stars"></div>
+
+              <div class="testimonial-lines">
+
+                <div class="text-line long"></div>
+                <div class="text-line long"></div>
+                <div class="text-line medium"></div>
+
+              </div>
+
+              <div class="reviewer"></div>
+              <div class="reviewer-detail"></div>
+
+            </article>
+
+
+            <!-- CARD 4 -->
+            <article class="testimonial-card">
+
+              <div class="quote-mark"></div>
+
+              <div class="stars"></div>
+
+              <div class="testimonial-lines">
+
+                <div class="text-line long"></div>
+                <div class="text-line long"></div>
+                <div class="text-line medium"></div>
+
+              </div>
+
+              <div class="reviewer"></div>
+              <div class="reviewer-detail"></div>
+
+            </article>
+
+
+            <!-- CARD 5 -->
+            <article class="testimonial-card">
+
+              <div class="quote-mark"></div>
+
+              <div class="stars"></div>
+
+              <div class="testimonial-lines">
+
+                <div class="text-line long"></div>
+                <div class="text-line long"></div>
+                <div class="text-line medium"></div>
+
+              </div>
+
+              <div class="reviewer"></div>
+              <div class="reviewer-detail"></div>
+
+            </article>
+
+
+            <!-- CARD 6 -->
+            <article class="testimonial-card">
+
+              <div class="quote-mark"></div>
+
+              <div class="stars"></div>
+
+              <div class="testimonial-lines">
+
+                <div class="text-line long"></div>
+                <div class="text-line long"></div>
+                <div class="text-line medium"></div>
+
+              </div>
+
+              <div class="reviewer"></div>
+              <div class="reviewer-detail"></div>
+
+            </article>
+
+
+            <!-- CARD 7 -->
+            <article class="testimonial-card">
+
+              <div class="quote-mark"></div>
+
+              <div class="stars"></div>
+
+              <div class="testimonial-lines">
+
+                <div class="text-line long"></div>
+                <div class="text-line long"></div>
+                <div class="text-line medium"></div>
+
+              </div>
+
+              <div class="reviewer"></div>
+              <div class="reviewer-detail"></div>
+
+            </article>
+
+
+            <!-- CARD 8 -->
+            <article class="testimonial-card">
+
+              <div class="quote-mark"></div>
+
+              <div class="stars"></div>
+
+              <div class="testimonial-lines">
+
+                <div class="text-line long"></div>
+                <div class="text-line long"></div>
+                <div class="text-line medium"></div>
+
+              </div>
+
+              <div class="reviewer"></div>
+              <div class="reviewer-detail"></div>
+
+            </article>
+
+
+            <!-- CARD 9 -->
+            <article class="testimonial-card">
+
+              <div class="quote-mark"></div>
+
+              <div class="stars"></div>
+
+              <div class="testimonial-lines">
+
+                <div class="text-line long"></div>
+                <div class="text-line long"></div>
+                <div class="text-line medium"></div>
+
+              </div>
+
+              <div class="reviewer"></div>
+              <div class="reviewer-detail"></div>
+
+            </article>
+
+
+            <!-- CARD 10 -->
+            <article class="testimonial-card">
+
+              <div class="quote-mark"></div>
+
+              <div class="stars"></div>
+
+              <div class="testimonial-lines">
+
+                <div class="text-line long"></div>
+                <div class="text-line long"></div>
+                <div class="text-line medium"></div>
+
+              </div>
+
+              <div class="reviewer"></div>
+              <div class="reviewer-detail"></div>
+
+            </article>
+
+
+          </div>
+
+        </div>
+
+
+        <div class="carousel-dots">
+
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+
+        </div>
+
+
+        <div class="button-box review-button"></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FAQ
+    ====================================================== -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="faq-grid">
+
+
+          <div>
+
+            <div class="eyebrow-box"></div>
+
+            <div class="faq-title"></div>
+
+            <div class="text-line long"></div>
+            <div class="text-line medium"></div>
+
+          </div>
+
+
+          <div class="faq-list">
+
+
+            <div class="faq-item">
+
+              <div class="faq-question"></div>
+
+              <div class="faq-plus"></div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+              <div class="faq-question"></div>
+
+              <div class="faq-plus"></div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+              <div class="faq-question"></div>
+
+              <div class="faq-plus"></div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+              <div class="faq-question"></div>
+
+              <div class="faq-plus"></div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+              <div class="faq-question"></div>
+
+              <div class="faq-plus"></div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer>
+
+    <div class="container">
+
+
+      <div class="footer-grid">
+
+
+        <div>
+
+          <div class="footer-logo"></div>
+
+          <div class="footer-lines">
+
+            <div class="text-line long"></div>
+            <div class="text-line long"></div>
+            <div class="text-line medium"></div>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div class="footer-title"></div>
+
+          <div class="footer-lines">
+
+            <div class="text-line long"></div>
+            <div class="text-line long"></div>
+            <div class="text-line medium"></div>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div class="footer-title"></div>
+
+          <div class="footer-lines">
+
+            <div class="text-line long"></div>
+            <div class="text-line long"></div>
+            <div class="text-line medium"></div>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div class="footer-title"></div>
+
+          <div class="footer-lines">
+
+            <div class="text-line long"></div>
+            <div class="text-line long"></div>
+            <div class="text-line medium"></div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <div class="footer-bottom-box"></div>
+
+        <div class="footer-bottom-box"></div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>
