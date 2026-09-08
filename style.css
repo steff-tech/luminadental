@@ -36,3 +36,9 @@
 .faq-question .faq-icon::after {
   transform: translate(-50%, -50%) rotate(90deg);
 }
+
+/* The final booking panel is intentionally removed from the page flow;
+   booking remains available through the persistent navigation CTA. */
+.final-booking-cta {
+  display: none !important;
+}
