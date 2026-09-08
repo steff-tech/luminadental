@@ -104,6 +104,19 @@
       display: none !important;
     }
 
+    /* Doctor portraits: use native browser rendering without the earlier
+       saturation filter, which can soften fine facial and hair detail. */
+    .doctors-repaired .doctor-image-refined img {
+      filter: none;
+      image-rendering: auto;
+      transform: none;
+    }
+
+    .doctors-repaired .doctor-card-refined:hover .doctor-image-refined img {
+      filter: none;
+      transform: scale(1.01);
+    }
+
     @media (max-width: 650px) {
       footer .footer-col {
         width: 100%;
