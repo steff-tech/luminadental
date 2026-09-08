@@ -181,6 +181,7 @@ const runPhase5Qa = () => {
     await loadScript("phase9.js");
     await loadScript("phase10.js");
     await loadScript("phase11.js");
+    await loadScript("phase12.js");
   } catch (error) {
     console.error("Lumina scripts failed to load:", error);
   }
