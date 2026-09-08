@@ -65,12 +65,44 @@ The visual system blends clinical precision with the calm atmosphere of a premiu
 - Accessible focus and reduced-motion considerations.
 - Purposeful micro-interactions.
 
+## Project Structure
+
+```text
+index.html
+style.css
+script.js                 # Compatibility bridge
+js/
+├── main.js               # Application entry point
+├── core/
+│   └── script-base.js    # Stable interaction layer
+└── phases/               # Ordered refinement layers
+    ├── phase2.js
+    ├── phase3.js
+    ├── phase4.js
+    ├── phase6.js
+    ├── phase7.js
+    ├── phase8.js
+    ├── phase9.js
+    ├── phase10.js
+    ├── phase11.js
+    ├── phase12.js
+    ├── phase13.js
+    ├── phase14.js
+    ├── phase15.js
+    └── phase16.js
+docs/
+├── DESIGN.md
+├── PRODUCT.md
+├── PROJECT_BRIEF.md
+└── PROGRESS.md
+```
+
 ## Project Documentation
 
-- [`PRODUCT.md`](PRODUCT.md) — product goals, audience, UX principles, and constraints.
-- [`PROJECT_BRIEF.md`](PROJECT_BRIEF.md) — original project brief and case-study direction.
-- [`DESIGN.md`](DESIGN.md) — visual system, components, motion, responsiveness, and accessibility.
-- [`PROGRESS.md`](PROGRESS.md) — implementation status and change log.
+- [`PRODUCT.md`](docs/PRODUCT.md) — product goals, audience, UX principles, and constraints.
+- [`PROJECT_BRIEF.md`](docs/PROJECT_BRIEF.md) — original project brief and case-study direction.
+- [`DESIGN.md`](docs/DESIGN.md) — visual system, components, motion, responsiveness, and accessibility.
+- [`PROGRESS.md`](docs/PROGRESS.md) — implementation status and change log.
 
 ## Portfolio Disclaimer
 
