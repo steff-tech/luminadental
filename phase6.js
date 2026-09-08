@@ -84,9 +84,11 @@
     note.className = "portfolio-disclaimer";
     note.textContent = "Concept presentation for portfolio purposes. Provider references are shown as illustrative examples.";
 
+    const footerGrid = footer.querySelector(".footer-grid");
     const footerBottom = footer.querySelector(".footer-bottom");
-    if (footerBottom) {
-      footerBottom.prepend(note);
+
+    if (footerGrid && footerGrid.parentNode) {
+      footerGrid.parentNode.insertBefore(note, footerBottom || null);
     } else {
       footer.querySelector(".container")?.appendChild(note);
     }
@@ -114,8 +116,9 @@
     style.textContent = `
       .portfolio-disclaimer {
         margin: 0;
-        padding: 12px 0 0;
-        color: var(--body-gray);
+        padding: 12px 0;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        color: rgba(255,255,255,0.48);
         font-size: 10px;
         line-height: 1.55;
         text-align: right;
@@ -127,7 +130,7 @@
 
       @media (max-width: 700px) {
         .portfolio-disclaimer {
-          padding-top: 8px;
+          padding: 10px 0;
           text-align: left;
         }
       }
