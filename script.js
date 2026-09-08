@@ -12,10 +12,31 @@ const loadScript = (source) => new Promise((resolve, reject) => {
   document.body.appendChild(script);
 });
 
+const normalizeEmDashes = () => {
+  const walker = document.createTreeWalker(
+    document.body,
+    NodeFilter.SHOW_TEXT
+  );
+
+  const textNodes = [];
+  let node;
+
+  while ((node = walker.nextNode())) {
+    textNodes.push(node);
+  }
+
+  textNodes.forEach((textNode) => {
+    textNode.nodeValue = textNode.nodeValue
+      .replace(/\s*—\s*/g, ", ")
+      .replace(/,\s+,/g, ",");
+  });
+};
+
 (async () => {
   try {
     await loadScript("script-base.js");
     await loadScript("phase2.js");
+    normalizeEmDashes();
   } catch (error) {
     console.error("Lumina scripts failed to load:", error);
   }
