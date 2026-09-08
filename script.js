@@ -94,11 +94,9 @@ const runPhase5Qa = () => {
       .trust-refined .trust-grid { grid-template-columns: 1fr; }
       .trust-logo-refined { min-height: 54px; border-top: 1px solid var(--border); }
       .insurance-banner-refined { border-radius: 18px; }
-      .insurance-refined .insurance-wordmarks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .insurance-refined .insurance-wordmarks { grid-template-columns: repeat(2, minmax(0,1fr)); }
       .insurance-logo-refined { min-width: 0; }
-      .testimonial-track-refined {
-        grid-auto-columns: 100%;
-      }
+      .testimonial-track-refined { grid-auto-columns: 100%; }
       .quote-card-refined { min-height: 300px; padding: 24px; }
       .testimonial-controls { margin-top: 18px; }
       .testimonial-dots { max-width: calc(100% - 120px); overflow: hidden; }
@@ -181,6 +179,7 @@ const runPhase5Qa = () => {
     await loadScript("phase7.js");
     await loadScript("phase8.js");
     await loadScript("phase9.js");
+    await loadScript("phase10.js");
   } catch (error) {
     console.error("Lumina scripts failed to load:", error);
   }
