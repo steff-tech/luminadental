@@ -158,24 +158,24 @@ const runAccessibilityQa = () => {
 
 (async () => {
   try {
-    await loadScript("../script-base.js");
-    await loadScript("../phase2.js");
-    await loadScript("../phase3.js");
-    await loadScript("../phase4.js");
+    await loadScript("core/script-base.js");
+    await loadScript("phases/phase2.js");
+    await loadScript("phases/phase3.js");
+    await loadScript("phases/phase4.js");
     normalizeEmDashes();
     runAccessibilityQa();
-    await loadScript("../phase6.js");
+    await loadScript("phases/phase6.js");
     normalizeEmDashes();
-    await loadScript("../phase7.js");
-    await loadScript("../phase8.js");
-    await loadScript("../phase9.js");
-    await loadScript("../phase10.js");
-    await loadScript("../phase11.js");
-    await loadScript("../phase12.js");
-    await loadScript("../phase13.js");
-    await loadScript("../phase14.js");
-    await loadScript("../phase15.js");
-    await loadScript("../phase16.js");
+    await loadScript("phases/phase7.js");
+    await loadScript("phases/phase8.js");
+    await loadScript("phases/phase9.js");
+    await loadScript("phases/phase10.js");
+    await loadScript("phases/phase11.js");
+    await loadScript("phases/phase12.js");
+    await loadScript("phases/phase13.js");
+    await loadScript("phases/phase14.js");
+    await loadScript("phases/phase15.js");
+    await loadScript("phases/phase16.js");
   } catch (error) {
     console.error("Lumina scripts failed to load:", error);
   }
