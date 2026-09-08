@@ -179,6 +179,7 @@ const runPhase5Qa = () => {
     await loadScript("phase6.js");
     normalizeEmDashes();
     await loadScript("phase7.js");
+    await loadScript("phase8.js");
   } catch (error) {
     console.error("Lumina scripts failed to load:", error);
   }
