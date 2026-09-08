@@ -62,6 +62,48 @@
       display: none !important;
     }
 
+    /* Keep the page usable even if reveal initialization is skipped. */
+    .reveal {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+
+    /* Precisely center the FAQ plus independently of text-glyph metrics. */
+    .faq-question .faq-icon {
+      position: relative;
+      flex: 0 0 28px;
+      width: 28px;
+      height: 28px;
+      display: block;
+      margin: 0;
+      font-size: 0;
+      line-height: 1;
+      color: var(--mint-dark);
+    }
+
+    .faq-question .faq-icon::before,
+    .faq-question .faq-icon::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 16px;
+      height: 1.5px;
+      border-radius: 999px;
+      background: currentColor;
+      transform: translate(-50%, -50%);
+    }
+
+    .faq-question .faq-icon::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    /* Booking stays available through the persistent navigation CTA. */
+    .final-booking-cta {
+      display: none !important;
+    }
+
     @media (max-width: 650px) {
       footer .footer-col {
         width: 100%;
